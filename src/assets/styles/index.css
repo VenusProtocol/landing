@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  background-color: #121620;
+  color: white;
+  font-size: 16px;
+  line-height: 1.5;
+}
