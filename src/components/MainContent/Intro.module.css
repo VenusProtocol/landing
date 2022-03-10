@@ -1,0 +1,53 @@
+.intro {
+    padding-top: 94px;
+    background-image: url('./assets/bg.png');
+    mix-blend-mode: screen;
+    min-height: 600px;
+    background-size: 493px 600px;
+    background-repeat: no-repeat;
+    background-position: 40vw 0;
+
+    @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+        background-image: url('./assets/bg@2x.png');
+    }
+
+    @media (min-width: 640px) {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    @media (min-width: 840px) {
+        background-position: right 0;
+    }
+
+    @media (min-width: 1280px) {
+        min-height: 700px;
+        background-size: 653px 700px;
+        padding-top: 123px;
+    }
+}
+
+.title {
+    margin-bottom: 24px;
+}
+
+.description {
+    margin-bottom: 48px;
+}
+
+.btn {
+    padding: 12px 32px;
+    background-color: #3A78FF;
+    transition: background-color .3s;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #265ACC;
+    }
+
+    &:active {
+        background-color: #1B4398;
+    }
+}

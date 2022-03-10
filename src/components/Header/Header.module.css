@@ -1,0 +1,24 @@
+/*@import "../../assets/styles/media.css";*/
+
+.root {
+    background-color: var(--color-bg);
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    @media (min-width: 640px) {
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+
+    /*@media (--m) {
+        height: 80px;
+    }*/
+}
+.inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 154px;
+}

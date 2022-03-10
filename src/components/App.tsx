@@ -1,11 +1,15 @@
 import React from "react"
+import Header from "./Header/Header"
+import MainContent from "./MainContent/MainContent"
+import Footer from "./Footer/Footer"
+import s from "./App.module.css"
 
 function App() {
   return (
-    <main>
-      <header>header</header>
-      <section>main content</section>
-      <footer>footer</footer>
+    <main className={s.root}>
+      <Header />
+      <MainContent />
+      <Footer />
     </main>
   )
 }
