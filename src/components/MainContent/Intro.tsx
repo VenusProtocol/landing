@@ -5,6 +5,7 @@ import s from "./Intro.module.css"
 function Intro() {
   return (
     <div className={s.intro}>
+      <div className={s.bg} />
       <Container>
         <div>
           <h1 className={s.title}>
