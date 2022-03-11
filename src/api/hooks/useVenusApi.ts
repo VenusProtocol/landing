@@ -4,13 +4,11 @@ import { getMarketsToRender, getTotal } from "../utils"
 import fetchMarkets from "../index"
 
 export const useVenusApi = () => {
-  const [data, setData] = useState<Market[] | undefined>()
+  const [data, setData] = useState<Market[]>()
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<Error | undefined>()
 
-  useEffect(() => {
-    setIsLoading(true)
-
+  const fetchData = () => {
     fetchMarkets()
       .then((res) => {
         setData(res)
@@ -20,6 +18,11 @@ export const useVenusApi = () => {
         setError(e)
         setIsLoading(false)
       })
+  }
+
+  useEffect(() => {
+    setIsLoading(true)
+    fetchData()
   }, [])
 
   const markets = getMarketsToRender(data)

@@ -1,7 +1,7 @@
 import { Market } from "./types"
 
 export const mapMarketsData = (markets?: Market[]) => {
-  if (!markets) return undefined
+  if (!markets) return []
 
   return markets.map((i) => {
     return {
@@ -20,7 +20,7 @@ function compareMarkets(a: Market, b: Market) {
 }
 
 export const getMarketsToRender = (markets?: Market[]) => {
-  if (!markets) return undefined
+  if (!markets) return []
   const filteredMarkets = markets.filter((i) => i.totalSupplyUsd >= 20000000)
   const sortedMarkets = filteredMarkets.sort(compareMarkets)
   return sortedMarkets.slice(0, 7)
@@ -37,7 +37,7 @@ export const getTotal = (
   key: "totalSupplyUsd" | "totalBorrowsUsd" | "liquidity",
   markets?: Market[]
 ) => {
-  if (!markets) return undefined
+  if (!markets) return []
   const totalSupplyUsd = markets.map((i) => i[key])
   const sum = sumArray(totalSupplyUsd)
   const formattedSum = new Intl.NumberFormat("en-EN", {
