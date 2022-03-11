@@ -47,7 +47,6 @@
 }
 
 .title {
-    margin-top: 0;
     margin-bottom: 24px;
     font-family: var(--font-intro);
     font-size: 40px;
@@ -62,7 +61,6 @@
 }
 
 .description {
-    margin-top: 0;
     margin-bottom: 48px;
 }
 
