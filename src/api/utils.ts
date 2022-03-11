@@ -20,7 +20,7 @@ function compareMarkets(a: Market, b: Market) {
 }
 
 export const getMarketsToRender = (markets?: Market[]) => {
-  if (!markets) return null
+  if (!markets) return undefined
   const filteredMarkets = markets.filter((i) => i.totalSupplyUsd >= 20000000)
   const sortedMarkets = filteredMarkets.sort(compareMarkets)
   return sortedMarkets.slice(0, 7)
