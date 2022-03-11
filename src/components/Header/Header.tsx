@@ -8,7 +8,7 @@ interface IHeaderProps {
   className?: string
 }
 
-function Header({ className }: IHeaderProps) {
+const Header: React.FC<IHeaderProps> = ({ className }) => {
   return (
     <header className={cn(s.root, className)}>
       <Container>

@@ -7,7 +7,7 @@ interface IMainContentProps {
   className?: string
 }
 
-function MainContent({ className }: IMainContentProps) {
+const MainContent: React.FC<IMainContentProps> = ({ className }) => {
   return (
     <section className={cn(s.root, className)}>
       <Intro />
