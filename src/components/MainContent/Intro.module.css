@@ -22,7 +22,7 @@
     top: 0;
     left: 0;
     right: 0;
-    opacity: .5;
+    opacity: .3;
     background-image: url('./assets/bg.png');
     mix-blend-mode: screen;
     background-size: 493px 600px;
@@ -47,6 +47,7 @@
 }
 
 .title {
+    margin-top: 0;
     margin-bottom: 24px;
     font-family: var(--font-intro);
     font-size: 40px;
@@ -61,6 +62,7 @@
 }
 
 .description {
+    margin-top: 0;
     margin-bottom: 48px;
 }
 
@@ -84,6 +86,8 @@
 .linksWrapper {
     display: flex;
     margin-top: auto;
+    padding-bottom: 24px;
+    padding-top: 24px;
 }
 
 .link {
