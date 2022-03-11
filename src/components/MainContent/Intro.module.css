@@ -1,8 +1,29 @@
 .intro {
+    position: relative;
     padding-top: 94px;
+    min-height: 600px;
+
+    @media (min-width: 640px) {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    @media (min-width: 1280px) {
+        min-height: 700px;
+        padding-top: 123px;
+    }
+}
+
+.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: .5;
     background-image: url('./assets/bg.png');
     mix-blend-mode: screen;
-    min-height: 600px;
     background-size: 493px 600px;
     background-repeat: no-repeat;
     background-position: 40vw 0;
@@ -11,19 +32,11 @@
         background-image: url('./assets/bg@2x.png');
     }
 
-    @media (min-width: 640px) {
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-
     @media (min-width: 840px) {
         background-position: right 0;
     }
-
     @media (min-width: 1280px) {
-        min-height: 700px;
         background-size: 653px 700px;
-        padding-top: 123px;
     }
 }
 
