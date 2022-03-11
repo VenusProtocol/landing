@@ -16,6 +16,7 @@
 
 .bg {
     position: absolute;
+    z-index: -1;
     width: 100%;
     height: 100%;
     top: 0;
@@ -42,6 +43,16 @@
 
 .title {
     margin-bottom: 24px;
+    font-family: var(--font-intro);
+    font-size: 40px;
+    line-height: 130%;
+    letter-spacing: 0.02em;
+    @media (min-width: 640px) {
+        font-size: 64px;
+    }
+    @media (min-width: 1280px) {
+        font-size: 80px;
+    }
 }
 
 .description {
