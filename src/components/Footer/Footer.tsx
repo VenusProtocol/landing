@@ -7,7 +7,7 @@ interface IFooterProps {
   className?: string
 }
 
-function Footer({ className }: IFooterProps) {
+const Footer: React.FC<IFooterProps> = ({ className }) => {
   return (
     <footer className={cn(s.root, className)}>
       <Container>

@@ -38,7 +38,8 @@
       }
     ],
     "react/require-default-props": 0,
-    "import/no-extraneous-dependencies": 0
+    "import/no-extraneous-dependencies": 0,
+    "react/function-component-definition": 0
   },
   "settings": {
     "import/extensions": [

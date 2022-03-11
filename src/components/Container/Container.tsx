@@ -7,7 +7,7 @@ interface IContainerProps {
   className?: string
 }
 
-function Container({ children, className }: IContainerProps) {
+const Container: React.FC<IContainerProps> = ({ children, className }) => {
   return <div className={cn(s.root, className)}>{children}</div>
 }
 
