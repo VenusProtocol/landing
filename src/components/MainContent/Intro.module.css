@@ -1,4 +1,5 @@
 .intro {
+    display: flex;
     position: relative;
     padding-top: 94px;
     min-height: 600px;
@@ -7,7 +8,6 @@
         padding-left: 24px;
         padding-right: 24px;
     }
-
     @media (min-width: 1280px) {
         min-height: 700px;
         padding-top: 123px;
@@ -32,13 +32,18 @@
     @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
         background-image: url('./assets/bg@2x.png');
     }
-
     @media (min-width: 840px) {
         background-position: right 0;
     }
     @media (min-width: 1280px) {
         background-size: 653px 700px;
     }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .title {
@@ -74,4 +79,41 @@
     &:active {
         background-color: #1B4398;
     }
+}
+
+.linksWrapper {
+    display: flex;
+    margin-top: auto;
+}
+
+.link {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: color .3s;
+
+    &:hover {
+        .iconArrow {
+            transform: translateX(3px);
+            color: #3A78FF;
+        }
+    }
+
+    &:active {
+        color: #3A78FF;
+    }
+
+    & + & {
+        margin-left: 24px;
+        border-left: 1px solid #2A2B36;
+        padding-left: 24px;
+    }
+}
+
+.iconArrow {
+    margin-left: 11px;
+    transform: translateX(0);
+    transition: transform .3s;
 }
