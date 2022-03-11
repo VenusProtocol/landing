@@ -3,7 +3,7 @@ import cn from "classnames"
 import s from "./Container.module.css"
 
 interface IContainerProps {
-  children: ReactElement
+  children: ReactElement | ReactElement[]
   className?: string
 }
 
