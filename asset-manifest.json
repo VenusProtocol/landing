@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/landing/static/css/main.6e52b025.css",
+    "main.js": "/landing/static/js/main.c07b4713.js",
+    "static/js/787.c940155e.chunk.js": "/landing/static/js/787.c940155e.chunk.js",
+    "static/media/bg@2x.png": "/landing/static/media/bg@2x.4808bdb5154329a498a5.png",
+    "static/media/ProximaNova-Semibold.eot": "/landing/static/media/ProximaNova-Semibold.10c96a76d4c0bfd46049.eot",
+    "static/media/ProximaNova-Regular.eot": "/landing/static/media/ProximaNova-Regular.25c70ac46cc477971292.eot",
+    "static/media/ProximaNova-Semibold.ttf": "/landing/static/media/ProximaNova-Semibold.38c4c3753aa7dddcc9fe.ttf",
+    "static/media/ProximaNova-Regular.ttf": "/landing/static/media/ProximaNova-Regular.8c38f88959ed8965e19b.ttf",
+    "static/media/Inconsolata-SemiBold.eot": "/landing/static/media/Inconsolata-SemiBold.efb3f03e27e90ebc5dd2.eot",
+    "static/media/Inconsolata-SemiBold.ttf": "/landing/static/media/Inconsolata-SemiBold.e85d6d8a9bb264ac8e28.ttf",
+    "static/media/bg.png": "/landing/static/media/bg.6f10eea0ef37d9c75a79.png",
+    "static/media/Inconsolata-SemiBold.woff": "/landing/static/media/Inconsolata-SemiBold.8342ae20c70a10b6204c.woff",
+    "static/media/ProximaNova-Regular.woff": "/landing/static/media/ProximaNova-Regular.0582fad389c18610fea7.woff",
+    "static/media/ProximaNova-Semibold.woff": "/landing/static/media/ProximaNova-Semibold.6433d195ad3ec4f67bf7.woff",
+    "static/media/Inconsolata-SemiBold.woff2": "/landing/static/media/Inconsolata-SemiBold.53da197756cd0c3a544a.woff2",
+    "static/media/ProximaNova-Regular.woff2": "/landing/static/media/ProximaNova-Regular.9edb1ac7082d35294867.woff2",
+    "static/media/ProximaNova-Semibold.woff2": "/landing/static/media/ProximaNova-Semibold.1501f6f6305d8c62627f.woff2",
+    "static/media/logo.svg": "/landing/static/media/logo.ee5f600677d823be563ca7a895c93bf2.svg",
+    "static/media/2.svg": "/landing/static/media/2.5f17ab80a4410eae3f1566543eee663d.svg",
+    "index.html": "/landing/index.html",
+    "static/media/3.svg": "/landing/static/media/3.8f6a34fcc1abc55e14f002afb849c13c.svg",
+    "static/media/1.svg": "/landing/static/media/1.c0e089c784e5484b7a4dbc67a16ced51.svg",
+    "static/media/arrow.svg": "/landing/static/media/arrow.1dbba88cf48323b9fa22ab6608aacf1b.svg",
+    "main.6e52b025.css.map": "/landing/static/css/main.6e52b025.css.map",
+    "main.c07b4713.js.map": "/landing/static/js/main.c07b4713.js.map",
+    "787.c940155e.chunk.js.map": "/landing/static/js/787.c940155e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6e52b025.css",
+    "static/js/main.c07b4713.js"
+  ]
+}
