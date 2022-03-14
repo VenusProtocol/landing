@@ -15,7 +15,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
     useVenusApi()
 
   if (isLoading) {
-    return <p>Loading..</p>
+    return <p>Loading...</p>
   }
   if (error) {
     return <p>{error.message}</p>
