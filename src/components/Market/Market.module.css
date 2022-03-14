@@ -178,8 +178,11 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background-color: black;
     margin-right: 8px;
+    @media (min-width: 640px) {
+        width: 32px;
+        height: 32px;
+    }
 }
 .marketItemLabel {
     color: #A9ABC7;

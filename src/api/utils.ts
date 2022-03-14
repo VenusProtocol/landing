@@ -1,9 +1,12 @@
-import { Market } from "./types"
+import { MarketMapped, MarketResponse } from "./types"
+import { iconsConfig } from "./constants"
 
-export const mapMarketsData = (markets?: Market[]) => {
+export const mapMarketsData = (markets?: MarketResponse[]): MarketMapped[] => {
   if (!markets) return []
 
   return markets.map((i) => {
+    const assetIcon =
+      iconsConfig[i.underlyingSymbol as keyof typeof iconsConfig]
     return {
       ...i,
       supplyApy: Number(i.supplyApy),
@@ -12,15 +15,16 @@ export const mapMarketsData = (markets?: Market[]) => {
       totalBorrowsUsd: Number(i.totalBorrowsUsd),
       liquidity: Number(i.liquidity),
       borrowApy: Number(i.borrowApy),
+      assetIcon,
     }
   })
 }
 
-function compareMarkets(a: Market, b: Market) {
+function compareMarkets(a: MarketMapped, b: MarketMapped) {
   return b.supplyApy + b.supplyVenusApy - (a.supplyApy + a.supplyVenusApy)
 }
 
-export const getMarketsToRender = (markets?: Market[]) => {
+export const getMarketsToRender = (markets?: MarketMapped[]) => {
   if (!markets) return []
   const filteredMarkets = markets.filter((i) => i.totalSupplyUsd >= 20000000)
   const sortedMarkets = filteredMarkets.sort(compareMarkets)
@@ -36,7 +40,7 @@ const addSpaceBeforeUSDSymbol = (string: string) => {
 
 export const getTotal = (
   key: "totalSupplyUsd" | "totalBorrowsUsd" | "liquidity",
-  markets?: Market[]
+  markets?: MarketMapped[]
 ) => {
   if (!markets) return []
   const totalSupplyUsd = markets.map((i) => i[key])
