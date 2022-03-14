@@ -64,5 +64,5 @@ export const nFormatter = (num: number, digits = 2) => {
     })
   return item
     ? (num / item.value).toFixed(digits).replace(rx, "$1") + item.symbol
-    : "0"
+    : num
 }
