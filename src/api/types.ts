@@ -4,6 +4,9 @@ export type Market = {
   totalSupplyUsd: number
   totalBorrowsUsd: number
   liquidity: number
+  borrowApy: number
+  symbol: string
+  underlyingSymbol: string
 }
 
 export type Data = {
