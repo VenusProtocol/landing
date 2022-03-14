@@ -8,12 +8,10 @@ interface ILinkProps {
   children: ReactElement | string
 }
 
-const Link: React.FC<ILinkProps> = ({ className, href, children }) => {
-  return (
-    <a className={cn(s.root, s.btn, className)} href={href}>
-      {children}
-    </a>
-  )
-}
+const Link: React.FC<ILinkProps> = ({ className, href, children }) => (
+  <a className={cn(s.root, s.btn, className)} href={href}>
+    {children}
+  </a>
+)
 
 export default Link
