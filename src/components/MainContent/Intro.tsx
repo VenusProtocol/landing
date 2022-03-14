@@ -1,7 +1,7 @@
 import React from "react"
 import Container from "../Container/Container"
 import { ReactComponent as IconArrow } from "./assets/arrow.svg"
-import ButtonLaunchApp from "../Button/ButtonLaunchApp"
+import LinkLaunchApp from "../Link/LinkLaunchApp"
 import s from "./Intro.module.css"
 
 const links = [
@@ -33,7 +33,7 @@ function Intro() {
           finance for the entire globe.
         </p>
 
-        <ButtonLaunchApp />
+        <LinkLaunchApp />
 
         <div className={s.linksWrapper}>
           {links.map(({ text, href }) => (

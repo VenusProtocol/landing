@@ -1,14 +1,14 @@
 import React, { ReactElement } from "react"
 import cn from "classnames"
-import s from "./Button.module.css"
+import s from "./Link.module.css"
 
-interface IButtonProps {
+interface ILinkProps {
   className?: string
   href: string
   children: ReactElement | string
 }
 
-const Button: React.FC<IButtonProps> = ({ className, href, children }) => {
+const Link: React.FC<ILinkProps> = ({ className, href, children }) => {
   return (
     <a className={cn(s.root, s.btn, className)} href={href}>
       {children}
@@ -16,4 +16,4 @@ const Button: React.FC<IButtonProps> = ({ className, href, children }) => {
   )
 }
 
-export default Button
+export default Link
