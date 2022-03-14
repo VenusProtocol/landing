@@ -63,7 +63,11 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
           {markets.map((i) => (
             <li className={s.marketItem} key={i.liquidity}>
               <div className={s.marketItemSymbol}>
-                <span className={s.icon} />
+                <img
+                  className={s.icon}
+                  src={i.assetIcon}
+                  alt={i.underlyingSymbol}
+                />
                 {i.underlyingSymbol}
               </div>
               <div className={s.marketItemValuesWrapper}>

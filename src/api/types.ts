@@ -1,4 +1,15 @@
-export type Market = {
+export type MarketResponse = {
+  supplyApy: string
+  supplyVenusApy: string
+  totalSupplyUsd: string
+  totalBorrowsUsd: string
+  liquidity: string
+  borrowApy: string
+  symbol: string
+  underlyingSymbol: string
+}
+
+export type MarketMapped = {
   supplyApy: number
   supplyVenusApy: number
   totalSupplyUsd: number
@@ -7,10 +18,11 @@ export type Market = {
   borrowApy: number
   symbol: string
   underlyingSymbol: string
+  assetIcon: string
 }
 
 export type Data = {
-  markets: Market[]
+  markets: MarketResponse[]
 }
 
 export type ResponseData = {

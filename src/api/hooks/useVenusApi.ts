@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
-import { Market } from "../types"
+import { MarketMapped } from "../types"
 import { getMarketsToRender, getTotal } from "../utils"
 import fetchMarkets from "../index"
 
 export const useVenusApi = () => {
-  const [data, setData] = useState<Market[]>()
+  const [data, setData] = useState<MarketMapped[]>()
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<Error | undefined>()
 
