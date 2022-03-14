@@ -2,9 +2,9 @@ import React from "react"
 import cn from "classnames"
 import { useVenusApi } from "../../api/hooks/useVenusApi"
 import Container from "../Container/Container"
-import s from "./Market.module.css"
 import { nFormatter } from "../../api/utils"
-import ButtonLaunchApp from "../Button/ButtonLaunchApp"
+import LinkLaunchApp from "../Link/LinkLaunchApp"
+import s from "./Market.module.css"
 
 interface IMarketProps {
   className?: string
@@ -47,7 +47,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
           </li>
         </ul>
 
-        <ButtonLaunchApp className={s.launchBtnDesktop} />
+        <LinkLaunchApp className={s.launchBtnDesktop} />
       </div>
 
       <div className={s.marketsWrapper}>
@@ -88,7 +88,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
         </ul>
 
         <div className={s.btnWrapper}>
-          <ButtonLaunchApp />
+          <LinkLaunchApp />
         </div>
       </div>
     </Container>
