@@ -13,6 +13,8 @@
     }
 }
 
+.totalWrapper {}
+
 .totalList {
     margin-bottom: 40px;
     display: flex;
@@ -33,6 +35,8 @@
     @media (min-width: 1280px) {
         flex-direction: column;
         width: auto;
+        justify-content: flex-start;
+        align-items: stretch;
     }
 }
 
@@ -90,8 +94,108 @@
     }
 }
 
+.launchBtnDesktop {
+    display: none;
+    @media (min-width: 1280px) {
+        display: inline-block;
+    }
+}
+
+.marketsWrapper {
+    @media (min-width: 1280px) {
+        flex-grow: 1;
+        padding-left: 100px;
+    }
+}
+
+.marketLabelsDesktop {
+    display: none;
+    @media (min-width: 640px) {
+        display: flex;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-bottom: 16px;
+    }
+}
+
+.marketLabelDesktopItem {
+    width: 20%;
+    font-size: 14px;
+    color: #A9ABC7;
+    &:not(&:first-child) {
+        text-align: right;
+        padding-left: 12px;
+    }
+}
+
 .marketsList {
+    margin-bottom: 40px;
 }
 
 .marketItem {
+    border-radius: 8px;
+    background-color: #2A2B36;
+    padding: 12px 8px;
+    font-size: 14px;
+
+    &+& {
+        margin-top: 16px;
+    }
+
+    @media (min-width: 640px) {
+        display: flex;
+        border-radius: 0;
+        padding: 22px 12px;
+    }
+}
+.marketItemSymbol {
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+
+    @media (min-width: 640px) {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        width: 20%;
+    }
+}
+.icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: black;
+    margin-right: 8px;
+}
+.marketItemLabel {
+    color: #A9ABC7;
+    font-size: 12px;
+
+    @media (min-width: 640px) {
+        display: none;
+    }
+}
+.marketItemValuesWrapper {
+    display: flex;
+    flex-grow: 1;
+}
+.marketItemValue {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    @media (min-width: 640px) {
+        text-align: right;
+        padding-left: 12px;
+    }
+}
+
+.btnWrapper {
+    display: flex;
+    justify-content: center;
+    @media (min-width: 1280px) {
+        display: none;
+    }
 }

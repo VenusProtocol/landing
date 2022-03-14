@@ -11,6 +11,7 @@ export const mapMarketsData = (markets?: Market[]) => {
       totalSupplyUsd: Number(i.totalSupplyUsd),
       totalBorrowsUsd: Number(i.totalBorrowsUsd),
       liquidity: Number(i.liquidity),
+      borrowApy: Number(i.borrowApy),
     }
   })
 }
@@ -45,4 +46,26 @@ export const getTotal = (
     currency: "USD",
   }).format(sum)
   return addSpaceBeforeUSDSymbol(formattedSum)
+}
+
+export const nFormatter = (num: number, digits = 2) => {
+  const lookup = [
+    { value: 1, symbol: "" },
+    { value: 1e3, symbol: "k" },
+    { value: 1e6, symbol: "M" },
+    { value: 1e9, symbol: "G" },
+    { value: 1e12, symbol: "T" },
+    { value: 1e15, symbol: "P" },
+    { value: 1e18, symbol: "E" },
+  ]
+  const rx = /\.0+$|(\.[0-9]*[1-9])0+$/
+  const item = lookup
+    .slice()
+    .reverse()
+    .find((i: { value: number; symbol: string }) => {
+      return Math.abs(num) >= i.value
+    })
+  return item
+    ? (num / item.value).toFixed(digits).replace(rx, "$1") + item.symbol
+    : "0"
 }
