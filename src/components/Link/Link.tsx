@@ -23,7 +23,7 @@ const Link: React.FC<ILinkProps> = ({
         [s.link_button]:
           variant === "button" || variant === "buttonTransparent",
         [s.link_buttonTransparent]: variant === "buttonTransparent",
-        [s.link_link]: variant === "link",
+        [s.link_default]: variant === "link",
       },
       className
     )}
