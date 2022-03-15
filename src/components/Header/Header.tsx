@@ -24,7 +24,7 @@ const Header: React.FC<IHeaderProps> = ({ className }) => {
     <header className={cn(s.root, className)}>
       <Container>
         <div className={s.inner}>
-          <Logo className={s.logo} />
+          <Logo key="headerLogo" className={s.logo} />
           <button
             onClick={() => setIsMenuOpened(!isMenuOpened)}
             type="button"
