@@ -1,17 +1,47 @@
-.btn {
+.link {
     display: inline-block;
-    padding: 12px 32px;
-    background-color: #3A78FF;
-    transition: background-color .3s;
-    border-radius: 8px;
+    transition: background-color .3s, border-color .3s, color .3s;
     color: white;
     text-decoration: none;
 
-    &:hover {
-        background-color: #265ACC;
+    &_button {
+        padding: 12px 32px;
+        background-color: #3A78FF;
+        border-radius: 8px;
+
+        &:hover {
+            background-color: #265ACC;
+        }
+
+        &:active {
+            background-color: #1B4398;
+        }
     }
 
-    &:active {
-        background-color: #1B4398;
+    &_buttonTransparent {
+        background-color: transparent;
+        border: 1px solid #3A78FF;
+
+        &:hover {
+            border-color: transparent;
+        }
+
+        &:active {
+            border-color: transparent;
+        }
+    }
+
+    &_link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            color: #A9ABC7;
+        }
+
+        &:active {
+            color: #3A78FF;
+        }
     }
 }

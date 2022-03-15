@@ -72,24 +72,14 @@
 }
 
 .link {
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    transition: color .3s;
-
     &:hover {
+        color: white;
+
         .iconArrow {
             transform: translateX(3px);
             color: #3A78FF;
         }
     }
-
-    &:active {
-        color: #3A78FF;
-    }
-
     & + & {
         margin-left: 24px;
         border-left: 1px solid #2A2B36;
