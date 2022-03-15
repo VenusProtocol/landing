@@ -29,18 +29,16 @@ const socialLinks = [
   },
 ]
 
-const SocialLinks: React.FC<ISocialLinksProps> = ({ className }) => {
-  return (
-    <div className={cn(s.socialLinksWrapper, className)}>
-      {socialLinks.map(({ icon, href }) => {
-        return (
-          <a key={href} className={s.socialLink} href={href}>
-            {icon}
-          </a>
-        )
-      })}
-    </div>
-  )
-}
+const SocialLinks: React.FC<ISocialLinksProps> = ({ className }) => (
+  <div className={cn(s.socialLinksWrapper, className)}>
+    {socialLinks.map(({ icon, href }) => {
+      return (
+        <a key={href} className={s.socialLink} href={href}>
+          {icon}
+        </a>
+      )
+    })}
+  </div>
+)
 
 export default SocialLinks
