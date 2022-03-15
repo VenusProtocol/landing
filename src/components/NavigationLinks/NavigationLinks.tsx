@@ -9,15 +9,15 @@ interface INavigationLinksProps {
 
 const content = [
   {
-    href: "TODO",
+    href: "https://venus.io/Whitepaper.pdf",
     text: "Whitepaper",
   },
   {
-    href: "TODO",
+    href: "https://docs.venus.io/",
     text: "Docs",
   },
   {
-    href: "TODO",
+    href: "https://app.venus.io/market",
     text: "Markets",
   },
 ]
