@@ -4,8 +4,8 @@ import Container from "../Container/Container"
 import NavigationLinks from "../NavigationLinks/NavigationLinks"
 import { ReactComponent as Logo } from "../Header/assets/logo.svg"
 import { ReactComponent as LogoMobile } from "./assets/logoSmall.svg"
-import Link from "../Link/Link"
 import SocialLinks from "./SocialLinks"
+import LinkLaunchApp from "../Link/LinkLaunchApp"
 import s from "./Footer.module.css"
 
 interface IFooterProps {
@@ -22,9 +22,7 @@ const Footer: React.FC<IFooterProps> = ({ className }) => {
           classNames={{ root: s.footerNavLinksWrapper, link: s.footerLink }}
         />
         <SocialLinks className={s.socialLinksWrapperMobile} />
-        <Link className={s.btn} variant="buttonTransparent" href="TODO">
-          White paper
-        </Link>
+        <LinkLaunchApp variant="buttonTransparent" className={s.btn} />
         <div className={s.copyWrapper}>
           <p className={s.copy}>
             © 2021 Developed by Swipe Wallet.

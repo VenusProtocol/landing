@@ -10,14 +10,14 @@
 }
 
 .logoMobile {
-    @media (min-width: 640px) {
+    @media (min-width: 840px) {
         display: none;
     }
 }
 
 .logo {
     display: none;
-    @media (min-width: 640px) {
+    @media (min-width: 840px) {
         display: inline-flex;
     }
 }
@@ -36,8 +36,11 @@
 }
 
 .footerLink {
-    padding: 12px 32px;
-
+    padding: 12px;
+    @media (min-width: 375px) {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
     @media (min-width: 640px) {
         padding-left: 25px;
         padding-right: 25px;
@@ -53,6 +56,12 @@
     padding-top: 24px;
     padding-bottom: 24px;
     min-width: 50%;
+    margin: auto;
+    padding-right: 12px;
+
+    @media (min-width: 375px) {
+        margin: 0;
+    }
 
     @media (min-width: 640px) {
         display: none;
@@ -70,6 +79,10 @@
 
 .btn {
     margin-left: auto;
+    margin-right: auto;
+    @media (min-width: 375px) {
+        margin-right: 0;
+    }
     @media (min-width: 640px) {
         margin-left: 24px;
     }

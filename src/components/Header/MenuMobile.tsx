@@ -1,8 +1,8 @@
 import React from "react"
 import cn from "classnames"
 import NavigationLinks from "../NavigationLinks/NavigationLinks"
-import Link from "../Link/Link"
 import Container from "../Container/Container"
+import LinkLaunchApp from "../Link/LinkLaunchApp"
 import s from "./MenuMobile.module.css"
 
 interface IMenuMobileProps {
@@ -15,9 +15,7 @@ const MenuMobile: React.FC<IMenuMobileProps> = ({ className }) => {
       <NavigationLinks
         classNames={{ root: s.headerNavLinksWrapper, link: s.headerLink }}
       />
-      <Link className={s.btn} variant="buttonTransparent" href="TODO">
-        White paper
-      </Link>
+      <LinkLaunchApp variant="buttonTransparent" className={s.btn} />
     </Container>
   )
 }
