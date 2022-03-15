@@ -1,6 +1,11 @@
 /*@import "../../assets/styles/media.css";*/
 
 .root {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
     background-color: var(--color-bg);
     padding-top: 16px;
     padding-bottom: 16px;
@@ -21,4 +26,37 @@
 }
 .logo {
     width: 154px;
+}
+.menuMobileBtn {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuMobile {
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg);
+    top: 60px;
+    height: calc(100vh - 60px);
+    opacity: 0;
+    transition: opacity .3s, visibility .3s;
+    visibility: hidden;
+}
+
+.menuMobileOpened {
+    opacity: 1;
+    visibility: visible;
+}
+
+.headerNavLinksWrapper {}
+.headerLink {
+
 }
