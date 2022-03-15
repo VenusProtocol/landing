@@ -22,21 +22,14 @@ const content = [
   },
 ]
 
-const NavigationLinks: React.FC<INavigationLinksProps> = ({ classNames }) => {
-  return (
-    <div className={cn(s.root, classNames?.root)}>
-      {content.map(({ href, text }) => (
-        <Link
-          className={classNames?.link}
-          key={text}
-          variant="link"
-          href={href}
-        >
-          {text}
-        </Link>
-      ))}
-    </div>
-  )
-}
+const NavigationLinks: React.FC<INavigationLinksProps> = ({ classNames }) => (
+  <div className={cn(s.root, classNames?.root)}>
+    {content.map(({ href, text }) => (
+      <Link className={classNames?.link} key={text} variant="link" href={href}>
+        {text}
+      </Link>
+    ))}
+  </div>
+)
 
 export default NavigationLinks
