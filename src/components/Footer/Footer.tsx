@@ -16,8 +16,8 @@ const Footer: React.FC<IFooterProps> = ({ className }) => {
   return (
     <footer className={cn(s.root, className)}>
       <Container className={s.container}>
-        <LogoMobile className={s.logoMobile} />
-        <Logo className={s.logo} />
+        <LogoMobile key="footerLogoMobile" className={s.logoMobile} />
+        <Logo key="footerLogo" className={s.logo} />
         <NavigationLinks
           classNames={{ root: s.footerNavLinksWrapper, link: s.footerLink }}
         />
