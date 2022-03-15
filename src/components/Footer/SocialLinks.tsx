@@ -1,9 +1,9 @@
 import React from "react"
 import cn from "classnames"
-import { ReactComponent as IconM } from "./assets/m.svg"
-import { ReactComponent as IconTg } from "./assets/tg.svg"
-import { ReactComponent as IconTw } from "./assets/tw.svg"
-import { ReactComponent as IconGh } from "./assets/gh.svg"
+import { ReactComponent as IconM } from "./assets/medium.svg"
+import { ReactComponent as IconTg } from "./assets/telegram.svg"
+import { ReactComponent as IconTw } from "./assets/twitter.svg"
+import { ReactComponent as IconGh } from "./assets/github.svg"
 import s from "./SocialLinks.module.css"
 
 interface ISocialLinksProps {

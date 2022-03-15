@@ -2,8 +2,25 @@
     display: flex;
 }
 
+.socialIcon {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+}
+
 .socialLink {
     display: inline-flex;
+    background-color: #343542;
+    border-radius: 4px;
+    transition: background-color .3s;
+
+    &:hover {
+        background-color: #3A78FF;
+    }
+
+    &:active {
+        background-color: #265ACC;
+    }
 
     &+& {
         margin-left: 16px;
