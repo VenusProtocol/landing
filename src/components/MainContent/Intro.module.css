@@ -4,13 +4,12 @@
     padding-top: 94px;
     min-height: 600px;
 
-    @media (min-width: 640px) {
-        padding-left: 24px;
-        padding-right: 24px;
+    @media (min-width: 840px) {
+        padding-top: 123px;
     }
+
     @media (min-width: 1280px) {
         min-height: 700px;
-        padding-top: 123px;
     }
 }
 
@@ -22,7 +21,7 @@
     top: 0;
     left: 0;
     right: 0;
-    opacity: .3;
+    opacity: .5;
     background-image: url('./assets/bg.png');
     mix-blend-mode: screen;
     background-size: 493px 600px;
