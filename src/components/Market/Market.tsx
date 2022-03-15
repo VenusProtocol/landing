@@ -83,7 +83,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
                   {nFormatter(i.totalBorrowsUsd)}
                 </p>
                 <p className={s.marketItemValue}>
-                  <span className={s.marketItemLabel}>Borrow APY</span> ${" "}
+                  <span className={s.marketItemLabel}>Borrow APY</span>
                   {nFormatter(i.borrowApy)}
                 </p>
               </div>
