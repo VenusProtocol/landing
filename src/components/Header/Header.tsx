@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react"
 import cn from "classnames"
 import Container from "../Container/Container"
 import { ReactComponent as Logo } from "./assets/logo.svg"
-// import NavigationLinks from "../NavigationLinks/NavigationLinks"
-// import Link from "../Link/Link"
-import s from "./Header.module.css"
+import NavigationLinks from "../NavigationLinks/NavigationLinks"
 import MenuMobile from "./MenuMobile"
+import LinkLaunchApp from "../Link/LinkLaunchApp"
+import s from "./Header.module.css"
 
 interface IHeaderProps {
   className?: string
@@ -61,12 +61,12 @@ const Header: React.FC<IHeaderProps> = ({ className }) => {
           <MenuMobile
             className={cn(s.menuMobile, isMenuOpened && s.menuMobileOpened)}
           />
-          {/* <NavigationLinks
-            classNames={{ root: s.headerNavLinksWrapper, link: s.headerLink }}
-          />
-          <Link className={s.btn} variant="buttonTransparent" href="TODO">
-            White paper
-          </Link> */}
+          <div className={s.menuDesktop}>
+            <NavigationLinks
+              classNames={{ root: s.headerNavLinksWrapper, link: s.headerLink }}
+            />
+            <LinkLaunchApp variant="buttonTransparent" className={s.btn} />
+          </div>
         </div>
       </Container>
     </header>

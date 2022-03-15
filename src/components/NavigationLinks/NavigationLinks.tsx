@@ -10,15 +10,15 @@ interface INavigationLinksProps {
 const content = [
   {
     href: "TODO",
-    text: "App",
-  },
-  {
-    href: "TODO",
-    text: "Markets",
+    text: "Whitepaper",
   },
   {
     href: "TODO",
     text: "Docs",
+  },
+  {
+    href: "TODO",
+    text: "Markets",
   },
 ]
 
