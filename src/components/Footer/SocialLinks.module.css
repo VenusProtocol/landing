@@ -1,0 +1,11 @@
+.socialLinksWrapper {
+    display: flex;
+}
+
+.socialLink {
+    display: inline-flex;
+
+    &+& {
+        margin-left: 16px;
+    }
+}

@@ -1,3 +1,98 @@
 .root {
     margin-top: auto;
+
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.logoMobile {
+    @media (min-width: 640px) {
+        display: none;
+    }
+}
+
+.logo {
+    display: none;
+    @media (min-width: 640px) {
+        display: inline-flex;
+    }
+}
+
+
+.footerNavLinksWrapper {
+    display: inline-flex;
+    margin-left: auto;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    @media (min-width: 840px) {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+}
+
+.footerLink {
+    padding: 12px 32px;
+
+    @media (min-width: 640px) {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    @media (min-width: 840px) {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+.socialLinksWrapperMobile {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    min-width: 50%;
+
+    @media (min-width: 640px) {
+        display: none;
+    }
+}
+
+.socialLinksWrapperDesktop {
+    display: none;
+
+    @media (min-width: 640px) {
+        display: inline-flex;
+        margin-left: auto;
+    }
+}
+
+.btn {
+    margin-left: auto;
+    @media (min-width: 640px) {
+        margin-left: 24px;
+    }
+}
+.copyWrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    @media (min-width: 640px) {
+        border-top: 1px solid #2A2B36;
+    }
+}
+.copy {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 0.06em;
+    color: #A9ABC7;
+
+    @media (min-width: 840px) {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
 }
