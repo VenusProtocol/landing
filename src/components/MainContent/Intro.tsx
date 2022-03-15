@@ -2,6 +2,7 @@ import React from "react"
 import Container from "../Container/Container"
 import { ReactComponent as IconArrow } from "./assets/arrow.svg"
 import LinkLaunchApp from "../Link/LinkLaunchApp"
+import Link from "../Link/Link"
 import s from "./Intro.module.css"
 
 const links = [
@@ -37,10 +38,10 @@ function Intro() {
 
         <div className={s.linksWrapper}>
           {links.map(({ text, href }) => (
-            <a key={text} className={s.link} href={href}>
+            <Link className={s.link} variant="link" key={text} href={href}>
               {text}
               <IconArrow className={s.iconArrow} />
-            </a>
+            </Link>
           ))}
         </div>
       </Container>
