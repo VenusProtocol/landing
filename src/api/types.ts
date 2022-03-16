@@ -5,6 +5,7 @@ export type MarketResponse = {
   totalBorrowsUsd: string
   liquidity: string
   borrowApy: string
+  borrowVenusApy: string
   symbol: string
   underlyingSymbol: string
 }
@@ -19,6 +20,7 @@ export type MarketMapped = {
   symbol: string
   underlyingSymbol: string
   assetIcon: string
+  depositApy: number
 }
 
 export type Data = {

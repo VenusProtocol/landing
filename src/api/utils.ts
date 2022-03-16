@@ -14,7 +14,8 @@ export const mapMarketsData = (markets?: MarketResponse[]): MarketMapped[] => {
       totalSupplyUsd: Number(i.totalSupplyUsd),
       totalBorrowsUsd: Number(i.totalBorrowsUsd),
       liquidity: Number(i.liquidity),
-      borrowApy: Number(i.borrowApy),
+      depositApy: Number(i.supplyApy) + Number(i.supplyVenusApy),
+      borrowApy: Number(i.borrowApy) + Number(i.borrowVenusApy),
       assetIcon,
     }
   })
