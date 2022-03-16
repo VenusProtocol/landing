@@ -10,6 +10,8 @@ interface IMarketProps {
   className?: string
 }
 
+const loadingState = "Loading..."
+
 const Market: React.FC<IMarketProps> = ({ className }) => {
   const {
     marketSize,
@@ -40,7 +42,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
             <div>
               <p className={s.totalTitle}>Market size:</p>
               <p className={s.totalSum}>
-                {isLoading ? "Loading.." : marketSize}
+                {isLoading ? loadingState : marketSize}
               </p>
             </div>
           </li>
@@ -49,7 +51,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
             <div>
               <p className={s.totalTitle}>Total Borrowed:</p>
               <p className={s.totalSum}>
-                {isLoading ? "Loading.." : borrowedSum}
+                {isLoading ? loadingState : borrowedSum}
               </p>
             </div>
           </li>
@@ -58,7 +60,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
             <div>
               <p className={s.totalTitle}>Total Liquidity:</p>
               <p className={s.totalSum}>
-                {isLoading ? "Loading.." : liquiditySum}
+                {isLoading ? loadingState : liquiditySum}
               </p>
             </div>
           </li>
@@ -68,7 +70,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
       </div>
 
       {isLoading ? (
-        <p>Loading..</p>
+        <p>{loadingState}</p>
       ) : (
         <div className={s.marketsWrapper}>
           <div className={s.marketLabelsDesktop}>
