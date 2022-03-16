@@ -37,5 +37,6 @@ export const useVenusApi = () => {
     markets,
     isLoading,
     error,
+    fetchData,
   }
 }
