@@ -21,15 +21,15 @@
     color: white;
     text-decoration: none;
     padding: 12px 32px;
-    background-color: #3A78FF;
+    background-color: var(--color-primary);
     border-radius: 8px;
 
     &:hover {
-        background-color: #265ACC;
+        background-color: var(--color-primary-hover);
     }
 
     &:active {
-        background-color: #1B4398;
+        background-color: var(--color-primary-active);
     }
 
 }
@@ -65,7 +65,7 @@
     &:not(&:first-child) {
         margin-top: 16px;
         padding-top: 16px;
-        border-top: 1px solid #2A2B36;
+        border-top: 1px solid var(--color-bg-secondary);
 
         @media (min-width: 640px) {
             border-top: none;
@@ -76,7 +76,7 @@
         @media (min-width: 1280px) {
             margin-top: 16px;
             padding-top: 16px;
-            border-top: 1px solid #2A2B36;
+            border-top: 1px solid var(--color-bg-secondary);
         }
     }
 }
@@ -87,7 +87,7 @@
         display: block;
         width: 1px;
         height: 60px;
-        background-color: #2A2B36;
+        background-color: var(--color-bg-secondary);
     }
     @media (min-width: 840px) {
         height: 70px;
@@ -98,7 +98,7 @@
 }
 
 .totalTitle {
-    color: #A9ABC7;
+    color: var(--color-text-secondary);
     margin-bottom: 12px;
 }
 
@@ -146,7 +146,7 @@
 .marketLabelDesktopItem {
     width: 20%;
     font-size: 14px;
-    color: #A9ABC7;
+    color: var(--color-text-secondary);
     &:not(&:first-child) {
         text-align: right;
         padding-left: 12px;
@@ -162,7 +162,7 @@
 
 .marketItem {
     border-radius: 8px;
-    background-color: #2A2B36;
+    background-color: var(--color-bg-secondary);
     padding: 12px 8px;
     font-size: 14px;
 
@@ -206,7 +206,7 @@
     }
 }
 .marketItemLabel {
-    color: #A9ABC7;
+    color: var(--color-text-secondary);
     font-size: 12px;
 
     @media (min-width: 640px) {
