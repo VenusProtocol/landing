@@ -1,7 +1,13 @@
 :root {
     --fontSize: 1rem;
     --color-bg: #121620;
-    --color-white: white;
+    --color-bg-secondary: #2A2B36;
+    --color-text: white;
+    --color-primary: #3A78FF;
+    --color-primary-hover: #265ACC;
+    --color-primary-active: #1B4398;
+    --color-text-secondary: #A9ABC7;
+    --color-button-secondary: #343542;
 
     --font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

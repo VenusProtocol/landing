@@ -16,7 +16,7 @@
 }
 
 .benefitItem {
-    background-color: #2A2B36;
+    background-color: var(--color-bg-secondary);
     border-radius: 8px;
     padding: 24px;
 
@@ -57,5 +57,5 @@
     margin-bottom: 8px;
 }
 .text {
-    color: #A9ABC7;
+    color: var(--color-text-secondary);
 }

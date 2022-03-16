@@ -93,7 +93,7 @@
     width: 100%;
 
     @media (min-width: 640px) {
-        border-top: 1px solid #2A2B36;
+        border-top: 1px solid var(--color-bg-secondary);
     }
 }
 .copy {
@@ -102,7 +102,7 @@
     font-size: 12px;
     line-height: 150%;
     letter-spacing: 0.06em;
-    color: #A9ABC7;
+    color: var(--color-text-secondary);
 
     @media (min-width: 840px) {
         padding-top: 48px;

@@ -9,7 +9,7 @@
     display: block;
 
     &+& {
-        border-top: 1px solid #2A2B36;
+        border-top: 1px solid var(--color-bg-secondary);
     }
     
     &:after {

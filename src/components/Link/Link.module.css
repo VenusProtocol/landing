@@ -6,21 +6,21 @@
 
     &_button {
         padding: 12px 32px;
-        background-color: #3A78FF;
+        background-color: var(--color-primary);
         border-radius: 8px;
 
         &:hover {
-            background-color: #265ACC;
+            background-color: var(--color-primary-hover);
         }
 
         &:active {
-            background-color: #1B4398;
+            background-color: var(--color-primary-active);
         }
     }
 
     &_buttonTransparent {
         background-color: transparent;
-        border: 1px solid #3A78FF;
+        border: 1px solid var(--color-primary);
 
         &:hover {
             border-color: transparent;
@@ -37,11 +37,11 @@
         align-items: center;
 
         &:hover {
-            color: #A9ABC7;
+            color: var(--color-text-secondary);
         }
 
         &:active {
-            color: #3A78FF;
+            color: var(--color-primary);
         }
     }
 }
