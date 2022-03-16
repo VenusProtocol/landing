@@ -8,15 +8,15 @@ import s from "./Intro.module.css"
 const links = [
   {
     text: "Lend",
-    href: "TODO",
+    href: "https://app.venus.io/dashboard",
   },
   {
     text: "Borrow",
-    href: "TODO",
+    href: "https://app.venus.io/dashboard",
   },
   {
     text: "Earn",
-    href: "TODO",
+    href: "https://app.venus.io/xvs",
   },
 ]
 

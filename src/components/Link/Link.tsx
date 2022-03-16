@@ -28,6 +28,8 @@ const Link: React.FC<ILinkProps> = ({
       className
     )}
     href={href}
+    target="_blank"
+    rel="noreferrer"
   >
     {children}
   </a>
