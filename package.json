@@ -64,5 +64,12 @@
   },
   "resolutions": {
     "postcss": "^8.4.8"
+  },
+  "reactSnap": {
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
+    "skipThirdPartyRequests": true
   }
 }
