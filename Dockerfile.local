@@ -33,17 +33,6 @@ RUN npm init -y &&  \
 USER pptruser
 RUN yarn build
 
-#----- Upload to S3 ------
-FROM amazon/aws-cli AS s3_uploader
-
-ARG S3_BUCKET_NAME
-
-RUN mkdir -p /build/statics
-
-COPY --from=builder /app/build /build/statics
-
-RUN aws s3 cp /build/statics s3://${S3_BUCKET_NAME}/ --recursive
-
 #----- Build Docker image -----
 FROM nginx:alpine
 # Set working directory to nginx asset directory
