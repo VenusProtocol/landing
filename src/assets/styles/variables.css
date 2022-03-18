@@ -1,6 +1,7 @@
 :root {
     --fontSize: 1rem;
     --color-bg: #121620;
+    --color-bg-transparent: #121620d1;
     --color-bg-secondary: #2A2B36;
     --color-text: white;
     --color-primary: #3A78FF;
