@@ -24,7 +24,7 @@ const content = [
   {
     icon: <Dots className={s.icon} />,
     title: "Scalable",
-    text: "Built on Binance Smart Chain for fast, secure, and low cost transactions.",
+    text: "Built on BNB Chain for fast, secure, and low cost transactions.",
   },
 ]
 
