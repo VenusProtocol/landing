@@ -37,7 +37,7 @@
 
 .footerLink {
     padding: 12px;
-    @media (min-width: 375px) {
+    @media (min-width: 416px) {
         padding-left: 18px;
         padding-right: 18px;
     }
@@ -59,7 +59,7 @@
     margin: auto;
     padding-right: 12px;
 
-    @media (min-width: 375px) {
+    @media (min-width: 416px) {
         margin: 0;
     }
 
@@ -80,7 +80,7 @@
 .btn {
     margin-left: auto;
     margin-right: auto;
-    @media (min-width: 375px) {
+    @media (min-width: 416px) {
         margin-right: 0;
     }
     @media (min-width: 640px) {

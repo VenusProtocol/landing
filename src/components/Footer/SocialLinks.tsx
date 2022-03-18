@@ -4,6 +4,7 @@ import { ReactComponent as IconMedium } from "./assets/medium.svg"
 import { ReactComponent as IconDiscord } from "./assets/discord.svg"
 import { ReactComponent as IconTwitter } from "./assets/twitter.svg"
 import { ReactComponent as IconGithub } from "./assets/github.svg"
+import { ReactComponent as IconVenus } from "./assets/venus.svg"
 import s from "./SocialLinks.module.css"
 
 interface ISocialLinksProps {
@@ -11,6 +12,10 @@ interface ISocialLinksProps {
 }
 
 const socialLinks = [
+  {
+    icon: <IconVenus className={s.socialIcon} />,
+    href: "https://bscscan.com/address/0xcF6BB5389c92Bdda8a3747Ddb454cB7a64626C63",
+  },
   {
     icon: <IconMedium className={s.socialIcon} />,
     href: "https://medium.com/@Venus_protocol",
