@@ -24,11 +24,7 @@ const Footer: React.FC<IFooterProps> = ({ className }) => {
         <SocialLinks className={s.socialLinksWrapperMobile} />
         <LinkLaunchApp variant="buttonTransparent" className={s.btn} />
         <div className={s.copyWrapper}>
-          <p className={s.copy}>
-            © 2021 Developed by Swipe Wallet.
-            <br />
-            Licensed & open-source under the MIT License
-          </p>
+          <p className={s.copy}>© {new Date().getFullYear()} Venus Protocol</p>
           <SocialLinks className={s.socialLinksWrapperDesktop} />
         </div>
       </Container>
