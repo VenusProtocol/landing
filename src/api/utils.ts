@@ -67,7 +67,8 @@ export const nFormatter = (num: number, digits = 2) => {
     .find((i: { value: number; symbol: string }) => {
       return Math.abs(num) >= i.value
     })
-  return item
-    ? (num / item.value).toFixed(digits).replace(rx, "$1") + item.symbol
-    : num
+
+  const formatValue = (value: number) => value.toFixed(digits).replace(rx, "$1")
+
+  return item ? formatValue(num / item.value) + item.symbol : formatValue(num)
 }
