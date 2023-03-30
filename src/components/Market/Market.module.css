@@ -103,6 +103,7 @@
 }
 
 .totalSum {
+    color: var(--color-text);
     font-family: var(--font-bold);
     font-size: 24px;
 
@@ -165,14 +166,26 @@
     background-color: var(--color-bg-secondary);
     padding: 12px 8px;
     font-size: 14px;
+    border: 1px solid var(--color-card-border);
 
     &+& {
         margin-top: 16px;
     }
 
+    &:nth-last-child(3) {
+        opacity: 0.6;
+    }
+
+    &:nth-last-child(2) {
+        opacity: 0.4;
+    }
+
+    &:nth-last-child(1) {
+        opacity: 0.2;
+    }
+
     @media (min-width: 640px) {
         display: flex;
-        border-radius: 0;
         padding: 22px 12px;
     }
     @media (min-width: 840px) {
@@ -219,6 +232,7 @@
     flex-grow: 1;
 }
 .marketItemValue {
+    color: var(--color-text);
     display: flex;
     flex-direction: column;
     width: 25%;

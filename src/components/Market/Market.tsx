@@ -40,7 +40,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
         <ul className={s.totalList}>
           <li className={s.totalItem}>
             <div>
-              <p className={s.totalTitle}>Market size:</p>
+              <p className={s.totalTitle}>Market size</p>
               <p className={s.totalSum}>
                 {isLoading ? loadingState : marketSize}
               </p>
@@ -49,7 +49,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
           <span className={s.divider} />
           <li className={s.totalItem}>
             <div>
-              <p className={s.totalTitle}>Total Borrowed:</p>
+              <p className={s.totalTitle}>Total Borrowed</p>
               <p className={s.totalSum}>
                 {isLoading ? loadingState : borrowedSum}
               </p>
@@ -58,7 +58,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
           <span className={s.divider} />
           <li className={s.totalItem}>
             <div>
-              <p className={s.totalTitle}>Total Liquidity:</p>
+              <p className={s.totalTitle}>Total Liquidity</p>
               <p className={s.totalSum}>
                 {isLoading ? loadingState : liquiditySum}
               </p>
