@@ -22,14 +22,13 @@ export const mapMarketsData = (markets?: MarketResponse[]): MarketMapped[] => {
 }
 
 function compareMarkets(a: MarketMapped, b: MarketMapped) {
-  return b.supplyApy + b.supplyVenusApy - (a.supplyApy + a.supplyVenusApy)
+  return b.totalSupplyUsd - a.totalSupplyUsd
 }
 
 export const getMarketsToRender = (markets?: MarketMapped[]) => {
   if (!markets) return []
-  const filteredMarkets = markets.filter((i) => i.totalSupplyUsd >= 20000000)
-  const sortedMarkets = filteredMarkets.sort(compareMarkets)
-  return sortedMarkets.slice(0, 7)
+  const sortedMarkets = markets.sort(compareMarkets)
+  return sortedMarkets.slice(0, 10)
 }
 
 const sumArray = (numbers: number[]) =>
