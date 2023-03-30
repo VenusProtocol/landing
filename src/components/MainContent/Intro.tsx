@@ -7,7 +7,7 @@ import s from "./Intro.module.css"
 
 const links = [
   {
-    text: "Lend",
+    text: "Supply",
     href: "https://app.venus.io/dashboard",
   },
   {
