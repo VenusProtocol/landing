@@ -1,19 +1,19 @@
-import React, { useState } from "react"
-import ScrollLock from "react-scrolllock"
-import cn from "classnames"
-import Container from "../Container/Container"
-import { ReactComponent as Logo } from "./assets/logo.svg"
-import NavigationLinks from "../NavigationLinks/NavigationLinks"
-import MenuMobile from "./MenuMobile"
-import LinkLaunchApp from "../Link/LinkLaunchApp"
-import s from "./Header.module.css"
+import React, { useState } from 'react';
+import ScrollLock from 'react-scrolllock';
+import cn from 'classnames';
+import Container from '../Container/Container';
+import { ReactComponent as Logo } from './assets/logo.svg';
+import NavigationLinks from '../NavigationLinks/NavigationLinks';
+import MenuMobile from './MenuMobile';
+import LinkLaunchApp from '../Link/LinkLaunchApp';
+import s from './Header.module.css';
 
 interface IHeaderProps {
-  className?: string
+  className?: string;
 }
 
 const Header: React.FC<IHeaderProps> = ({ className }) => {
-  const [isMenuOpened, setIsMenuOpened] = useState(false)
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
   return (
     <>
       <header className={cn(s.root, className)}>
@@ -53,9 +53,7 @@ const Header: React.FC<IHeaderProps> = ({ className }) => {
                 </svg>
               )}
             </button>
-            <MenuMobile
-              className={cn(s.menuMobile, isMenuOpened && s.menuMobileOpened)}
-            />
+            <MenuMobile className={cn(s.menuMobile, isMenuOpened && s.menuMobileOpened)} />
             <div className={s.menuDesktop}>
               <NavigationLinks
                 classNames={{
@@ -70,7 +68,7 @@ const Header: React.FC<IHeaderProps> = ({ className }) => {
       </header>
       <ScrollLock isActive={isMenuOpened} />
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

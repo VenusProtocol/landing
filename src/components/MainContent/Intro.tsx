@@ -1,24 +1,24 @@
-import React from "react"
-import Container from "../Container/Container"
-import { ReactComponent as IconArrow } from "./assets/arrow.svg"
-import LinkLaunchApp from "../Link/LinkLaunchApp"
-import Link from "../Link/Link"
-import s from "./Intro.module.css"
+import React from 'react';
+import Container from '../Container/Container';
+import { ReactComponent as IconArrow } from './assets/arrow.svg';
+import LinkLaunchApp from '../Link/LinkLaunchApp';
+import Link from '../Link/Link';
+import s from './Intro.module.css';
 
 const links = [
   {
-    text: "Supply",
-    href: "https://app.venus.io/dashboard",
+    text: 'Supply',
+    href: 'https://app.venus.io/dashboard',
   },
   {
-    text: "Borrow",
-    href: "https://app.venus.io/dashboard",
+    text: 'Borrow',
+    href: 'https://app.venus.io/dashboard',
   },
   {
-    text: "Earn",
-    href: "https://app.venus.io/xvs",
+    text: 'Earn',
+    href: 'https://app.venus.io/xvs',
   },
-]
+];
 
 function Intro() {
   return (
@@ -47,7 +47,7 @@ function Intro() {
       </Container>
       <div className={s.bg} />
     </div>
-  )
+  );
 }
 
-export default Intro
+export default Intro;
