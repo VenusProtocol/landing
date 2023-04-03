@@ -1,5 +1,6 @@
 .socialLinksWrapper {
     display: flex;
+    justify-content: space-between;
 }
 
 .socialIcon {
@@ -10,7 +11,7 @@
 
 .socialLink {
     display: inline-flex;
-    background-color: var(--color-button-secondary);
+    background-color: var(--color-icon-bg);
     border-radius: 4px;
     transition: background-color .3s;
 
@@ -24,5 +25,16 @@
 
     &+& {
         margin-left: 16px;
+
+        @media (min-width: 640px) {
+            margin-left: 24px;
+        }
     }
+}
+
+.mappedLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }

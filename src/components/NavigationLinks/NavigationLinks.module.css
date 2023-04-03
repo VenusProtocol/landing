@@ -1,3 +1,7 @@
 .root {
     display: flex;
+
+    a {
+        color: var(--color-text-secondary);
+    }
 }

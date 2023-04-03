@@ -5,8 +5,8 @@ import NavigationLinks from '../NavigationLinks/NavigationLinks';
 import { ReactComponent as Logo } from '../Header/assets/logo.svg';
 import { ReactComponent as LogoMobile } from './assets/logoSmall.svg';
 import SocialLinks from './SocialLinks';
-import LinkLaunchApp from '../Link/LinkLaunchApp';
 import s from './Footer.module.css';
+import Link from '../Link/Link';
 
 interface IFooterProps {
   className?: string;
@@ -15,13 +15,38 @@ interface IFooterProps {
 const Footer: React.FC<IFooterProps> = ({ className }) => (
   <footer className={cn(s.root, className)}>
     <Container className={s.container}>
-      <LogoMobile key="footerLogoMobile" className={s.logoMobile} />
-      <Logo key="footerLogo" className={s.logo} />
-      <NavigationLinks classNames={{ root: s.footerNavLinksWrapper, link: s.footerLink }} />
-      <SocialLinks className={s.socialLinksWrapperMobile} />
-      <LinkLaunchApp variant="buttonTransparent" className={s.btn} />
+      <div className={s.logoAndLinks}>
+        <Logo key="footerLogo" className={s.logo} />
+        <div className={s.links}>
+          <LogoMobile key="footerLogoMobile" className={s.logoMobile} />
+          <div className={s.navOptions}>
+            <NavigationLinks classNames={{ root: s.footerNavLinksWrapper, link: s.footerLink }} />
+            <Link
+              variant="buttonTransparent"
+              className={s.btn}
+              href="https://venus.io/Whitepaper.pdf"
+            >
+              White paper
+            </Link>
+          </div>
+          <div className={s.navOptions}>
+            <SocialLinks className={s.socialLinksWrapperMobile} />
+            <Link
+              variant="buttonTransparent"
+              className={s.btnMobile}
+              href="https://venus.io/Whitepaper.pdf"
+            >
+              White paper
+            </Link>
+          </div>
+        </div>
+      </div>
+      <hr />
       <div className={s.copyWrapper}>
-        <p className={s.copy}>© {new Date().getFullYear()} Venus Protocol</p>
+        <div className={s.copyrightAndLicense}>
+          <p className={s.copy}>© {new Date().getFullYear()} Venus Protocol</p>
+          <p className={s.copy}>Licensed & open-source under the MIT License</p>
+        </div>
         <SocialLinks className={s.socialLinksWrapperDesktop} />
       </div>
     </Container>
