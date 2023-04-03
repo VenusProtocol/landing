@@ -1,0 +1,78 @@
+.root {
+    margin-top: 100px;
+    margin-bottom: 124px;
+    @media (min-width: 640px) {
+        margin-bottom: 140px;
+    }
+    @media (min-width: 840px) {
+        margin-top: 140px;
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+
+    @media (min-width: 840px) {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.textWrapper {
+    h2 {
+        margin-bottom: 16px;
+    }
+    
+    p {
+        a {
+            color: var(--color-primary-hover);
+        }
+    }
+
+    @media (min-width: 840px) {
+        margin-bottom: 84px;
+    }
+}
+
+.item {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 430px;
+    padding: 24px 24px 0 24px;
+
+    border: 1px solid var(--color-card-border);
+    border-radius: 8px;
+
+    @media (min-width: 640px) {
+        min-height: 556px;
+        padding: 40px 40px 0 40px;
+    }
+}
+
+.protectionPrioritized {
+    background: radial-gradient(57.9% 62.14% at 50% 50%, #143345 0%, #121620 100%);
+}
+
+.bugBounty {
+    background: radial-gradient(57.9% 62.14% at 50% 50%, #172340 0%, #121620 100%);
+}
+
+.backgroundImg {
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    flex: 1;
+}
+
+.protectionPrioritizedImg {
+    background-image: url('./assets/protection.png');
+}
+
+.bugBountyImg {
+    background-image: url('./assets/bugBounty.png');
+}
