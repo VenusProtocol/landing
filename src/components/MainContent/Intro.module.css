@@ -25,14 +25,20 @@
     mix-blend-mode: screen;
     background-size: 650px 650px;
     background-repeat: no-repeat;
-    background-position: 40vw 0;
+    background-position: 50vw 0;
 
     @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
         background-image: url('./assets/bg@2x.png');
     }
+
+    @media (min-width: 6400px) {
+        background-position: 40vw 0;
+    }
+
     @media (min-width: 840px) {
         background-position: right 0;
     }
+
     @media (min-width: 1280px) {
         background-size: 653px 700px;
     }
