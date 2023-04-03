@@ -10,6 +10,8 @@
     --color-text-secondary: #A9ABC7;
     --color-button-secondary: #343542;
     --color-card-border: #21293A;
+    --color-venus-prime: #8E6150;
+    --color-icon-bg: #232B3C;
 
     --font-fallback: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -17,4 +19,11 @@
     --font-default: 'Proxima Nova Rg', var(--font-fallback);
     --font-bold: 'Proxima Nova Lt', var(--font-fallback);
     --font-intro: 'Inconsolata', var(--font-fallback);
+
+    --global-max-width: 1920px;
+
+    --breakpoint-desktop: 1280px;
+    --breakpoint-medium: 840px;
+    --breakpoint-tablet: 640px;
+    --breakpoint-mobile: 375px;
 }
