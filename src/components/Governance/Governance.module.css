@@ -1,0 +1,182 @@
+.root {
+    margin-top: 100px;
+    margin-bottom: 124px;
+    @media (min-width: 640px) {
+        margin-bottom: 140px;
+    }
+    @media (min-width: 840px) {
+        margin-top: 140px;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+
+    border: 1px solid var(--color-card-border);
+    border-radius: 24px;
+    background-color: var(--color-bg-secondary);
+
+    @media (min-width: 640px) {
+        flex-direction: row;
+        height: 500px;
+    }
+}
+
+.rings {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 250px;
+
+    background-image: url('./assets/ringsMobile.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media (min-width: 640px) {
+        background-image: url('./assets/ringsTablet.png');
+        background-position: left;
+        background-size: cover;
+
+        margin-left: -40px;
+        padding-left: 75px;
+        width: 580px;
+    }
+
+    @media (min-width: 840px) {
+        margin-left: 0;
+        background-image: url('./assets/rings.png');
+        background-position: top;
+        padding-left: 25px;
+        width: 478px;
+    }
+}
+
+.gradient {
+    display: none;
+    background: radial-gradient(56.21% 56.21% at 50% 50%, rgba(41, 52, 79, 0.6) 0%, rgba(22, 27, 39, 0) 100%);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+
+    @media (min-width: 840px) {
+        display: block;
+    } 
+}
+
+.backgroundImg {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex: 1;
+    min-height: 100%;
+}
+
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex: 1;
+    padding: 24px;
+    height: 100%;
+    z-index: 1;
+    
+    h2 {
+        margin-bottom: 24px;
+    }
+
+    p {
+        margin: 16px 0 40px 0;
+    }
+
+    @media (min-width: 1280px) {
+        padding: 40px;
+    }
+}
+
+.link {
+    width: fit-content;
+}
+
+.numberActiveUsers {
+    font-size: 2rem;
+
+    @media (min-width: 1280px) {
+        font-size: 3rem;
+    }
+}
+
+.usersInfo {
+    display: flex;
+    flex-direction: column;
+    margin-top: -100px;
+    z-index: 1;
+
+    @media (min-width: 640px) {
+        margin: 0;
+        margin-left: 30%;
+    }
+
+    @media (min-width: 840px) {
+        margin-left: 0;
+    }
+}
+
+.activeUsers {
+    letter-spacing: 0.07em;
+    font-variant: all-small-caps;
+    color: var(--color-text-secondary);
+    text-align: center;
+}
+
+.planets {
+    display: none;
+    
+    @media (min-width: 840px) {
+        display: flex;
+    }
+}
+
+.planetGreen {
+    position: absolute;
+    left: -10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0px 20px 40px #1B2335, inset 0px -4px 4px rgba(0, 0, 0, 0.25), inset 0px -40px 40px rgba(69, 229, 199, 0.8), inset 0px 4px 12px rgba(255, 251, 251, 0.4);
+    backdrop-filter: blur(20px);
+    z-index: 1;
+}
+
+.planetBlue {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0px 20px 40px #1B2335, inset 0px -4px 4px rgba(0, 0, 0, 0.25), inset 0px -40px 40px rgba(32, 94, 255, 0.8), inset 0px 4px 12px rgba(255, 251, 251, 0.4);
+    backdrop-filter: blur(20px);
+    z-index: 1;
+}
+
+.planetDark {
+    position: absolute;
+    bottom: 45px;
+    left: 225px;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0px 0.454545px 0.909091px #3672E8, inset 0px -1.81818px 1.81818px rgba(0, 0, 0, 0.25), inset 0px 1.81818px 5.45px rgba(255, 251, 251, 0.4);
+    backdrop-filter: blur(9.09091px);
+    z-index: 1;
+}
