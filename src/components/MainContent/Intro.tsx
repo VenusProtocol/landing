@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import Particles from 'react-particles';
+import type { Engine } from 'tsparticles-engine';
+import { loadFull } from 'tsparticles';
 import Container from '../Container/Container';
 import { ReactComponent as IconArrow } from './assets/arrow.svg';
 import LinkLaunchApp from '../Link/LinkLaunchApp';
 import Link from '../Link/Link';
 import s from './Intro.module.css';
+import particles from './particles';
 
 const links = [
   {
@@ -21,6 +25,10 @@ const links = [
 ];
 
 function Intro() {
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadFull(engine);
+  }, []);
+
   return (
     <div className={s.intro}>
       <Container className={s.container}>
@@ -46,6 +54,7 @@ function Intro() {
         </div>
       </Container>
       <div className={s.bg} />
+      <Particles init={particlesInit} options={particles} canvasClassName={s.particles} />
     </div>
   );
 }

@@ -104,3 +104,9 @@
     transform: translateX(0);
     transition: transform .3s;
 }
+
+.particles {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
