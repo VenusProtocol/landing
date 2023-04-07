@@ -8,21 +8,35 @@
     z-index: 1;
     background-color: var(--color-bg-transparent);
     display: flex;
+    justify-content: space-around;
     align-items: center;
     height: 60px;
 
     @media (min-width: 640px) {
         height: 80px;
     }
-
-    /*@media (--m) {
-        height: 80px;
-    }*/
 }
 .inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex: 1;
+    max-width: var(--global-max-width);
+    padding: 0 16px;
+
+    @media (min-width: 640px) {
+        padding: 0 24px;
+    }
+
+    @media (min-width: 840px) {
+        padding: 0 32px;
+    }
+
+    @media (min-width: 1280px) {
+        padding: 0 48px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 .logo {
     width: 154px;

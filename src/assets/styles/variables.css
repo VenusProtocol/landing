@@ -20,7 +20,7 @@
     --font-bold: 'Proxima Nova Lt', var(--font-fallback);
     --font-intro: 'Inconsolata', var(--font-fallback);
 
-    --global-max-width: 1920px;
+    --global-max-width: 1500px;
 
     --breakpoint-desktop: 1280px;
     --breakpoint-medium: 840px;

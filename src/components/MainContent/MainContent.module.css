@@ -1,5 +1,7 @@
 .root {
     padding-top: 60px;
+    width: 100%;
+    max-width: var(--global-max-width);
 
     @media (min-width: 640px) {
         padding-top: 80px;
