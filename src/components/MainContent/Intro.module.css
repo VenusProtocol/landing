@@ -21,26 +21,29 @@
     top: 0;
     left: 0;
     right: 0;
-    background-image: url('./assets/bg.png');
+    background-image: url('./assets/bgMobile.png');
     mix-blend-mode: screen;
     background-size: 650px 650px;
     background-repeat: no-repeat;
     background-position: 50vw 0;
 
-    @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
-        background-image: url('./assets/bg@2x.png');
-    }
-
-    @media (min-width: 6400px) {
-        background-position: 40vw 0;
+    @media (min-width: 640px) {
+        background-image: url('./assets/bg640.png');
+        background-size: 300px 700px;
+        background-position: 64vw 0;
     }
 
     @media (min-width: 840px) {
-        background-position: right 0;
+        background-image: url('./assets/bg840.png');
+        background-size: 575px 675px;
+        background-position: 55vw 0;
+    
     }
 
     @media (min-width: 1280px) {
-        background-size: 653px 700px;
+        background-image: url('./assets/bg.png');
+        background-size: 650px 700px;
+        background-position: right 0px;
     }
 }
 
