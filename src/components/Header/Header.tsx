@@ -7,6 +7,20 @@ import MenuMobile from './MenuMobile';
 import LinkLaunchApp from '../Link/LinkLaunchApp';
 import s from './Header.module.css';
 
+const content = [
+  {
+    href: 'https://venus.io/Whitepaper.pdf',
+    text: 'Whitepaper',
+  },
+  {
+    href: 'https://docs.venus.io/',
+    text: 'Docs',
+  },
+  {
+    href: 'https://app.venus.io/market',
+    text: 'Markets',
+  },
+];
 interface IHeaderProps {
   className?: string;
 }
@@ -54,6 +68,7 @@ const Header: React.FC<IHeaderProps> = ({ className }) => {
           <MenuMobile className={cn(s.menuMobile, isMenuOpened && s.menuMobileOpened)} />
           <div className={s.menuDesktop}>
             <NavigationLinks
+              content={content}
               classNames={{
                 root: s.headerNavLinksWrapper,
                 link: s.headerLink,

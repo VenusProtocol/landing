@@ -8,6 +8,21 @@ import SocialLinks from './SocialLinks';
 import s from './Footer.module.css';
 import Link from '../Link/Link';
 
+const content = [
+  {
+    href: 'https://app.venus.io/',
+    text: 'App',
+  },
+  {
+    href: 'https://app.venus.io/market',
+    text: 'Markets',
+  },
+  {
+    href: 'https://docs.venus.io/',
+    text: 'Docs',
+  },
+];
+
 interface IFooterProps {
   className?: string;
 }
@@ -20,7 +35,7 @@ const Footer: React.FC<IFooterProps> = ({ className }) => (
         <div className={s.links}>
           <LogoMobile key="footerLogoMobile" className={s.logoMobile} />
           <div className={s.navOptions}>
-            <NavigationLinks classNames={{ root: s.footerNavLinksWrapper, link: s.footerLink }} />
+            <NavigationLinks content={content} classNames={{ root: s.footerNavLinksWrapper, link: s.footerLink }} />
             <Link
               variant="buttonTransparent"
               className={s.btn}

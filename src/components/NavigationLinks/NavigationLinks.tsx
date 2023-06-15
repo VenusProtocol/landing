@@ -4,21 +4,25 @@ import Link from '../Link/Link';
 import s from './NavigationLinks.module.css';
 
 interface INavigationLinksProps {
+  content: Array<{
+    href: string;
+    text: string;
+  }>;
   classNames?: { root?: string; link?: string };
 }
 
 const content = [
   {
-    href: 'https://app.venus.io/',
-    text: 'App',
-  },
-  {
-    href: 'https://app.venus.io/market',
-    text: 'Markets',
+    href: 'https://venus.io/Whitepaper.pdf',
+    text: 'Whitepaper',
   },
   {
     href: 'https://docs.venus.io/',
     text: 'Docs',
+  },
+  {
+    href: 'https://app.venus.io/market',
+    text: 'Markets',
   },
 ];
 
