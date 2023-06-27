@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './Header/Header';
 import MainContent from './MainContent/MainContent';
 import Footer from './Footer/Footer';
 import s from './App.module.css';
@@ -8,7 +7,6 @@ import s from './App.module.css';
 function Main() {
   return (
     <main className={s.root}>
-      <Header />
       <MainContent />
       <Footer />
     </main>

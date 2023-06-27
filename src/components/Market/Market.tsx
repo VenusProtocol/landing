@@ -3,7 +3,6 @@ import cn from 'classnames';
 import { useVenusApi } from '../../api/hooks/useVenusApi';
 import Container from '../Container/Container';
 import { nFormatter } from '../../api/utils';
-import LinkLaunchApp from '../Link/LinkLaunchApp';
 import s from './Market.module.css';
 
 interface IMarketProps {
@@ -52,8 +51,6 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
             </div>
           </li>
         </ul>
-
-        <LinkLaunchApp className={s.launchBtnDesktop} />
       </div>
 
       {isLoading ? (
@@ -98,7 +95,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
           </ul>
 
           <div className={s.btnWrapper}>
-            <LinkLaunchApp />
+            <a href="https://app.venus.io">All markets</a>
           </div>
         </div>
       )}

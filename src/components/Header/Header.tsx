@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ScrollLock from 'react-scrolllock';
 import cn from 'classnames';
 import { ReactComponent as Logo } from './assets/logo.svg';
@@ -25,11 +25,35 @@ interface IHeaderProps {
   className?: string;
 }
 
+const HEADER_ID = 'header-id';
+
+const scrollEvent = () => {
+  const header = document.getElementById(HEADER_ID);
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (header) {
+    if (scrollTop > 100) {
+      header.classList.add(s.headerAfterScroll);
+    } else {
+      header.classList.remove(s.headerAfterScroll);
+    }
+  }
+};
+
 const Header: React.FC<IHeaderProps> = ({ className }) => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollEvent);
+
+    return () => {
+      window.removeEventListener('scroll', scrollEvent);
+    };
+  }, []);
+
   return (
     <>
-      <header className={cn(s.root, className)}>
+      <header id={HEADER_ID} className={cn(s.root, className)}>
         <div className={s.inner}>
           <Logo key="headerLogo" className={s.logo} />
           <button

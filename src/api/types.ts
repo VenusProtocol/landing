@@ -23,10 +23,19 @@ export type MarketMapped = {
   depositApy: number;
 };
 
-export type Data = {
+export type MarketsData = {
   markets: MarketResponse[];
 };
 
-export type ResponseData = {
-  data: Data;
+export type MarketsResponseData = {
+  data: MarketsData;
 };
+
+export type ProposalsData = {
+  total: number;
+};
+
+export type ProposalsResponseData = {
+  data: ProposalsData;
+};
+

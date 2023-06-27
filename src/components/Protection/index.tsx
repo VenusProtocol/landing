@@ -15,8 +15,8 @@ const Protection: React.FC<IProtectionProps> = ({ className }) => (
           <h2>Challenge our code and earn rewards up to $1,000,000</h2>
           <p>
             We encourage all to challenge our code and search for vulnerabilities. Read about our{' '}
-            <a href="https://community.venus.io/">bug bounty</a> rewards, and please submit any bug
-            you identify
+            <a href="https://code4rena.com/contests/2023-05-venus-protocol-isolated-pools">bug bounty</a> rewards, and please submit any bug
+            you identify.
           </p>
         </div>
         <div className={cn(s.backgroundImg, s.bugBountyImg)} />

@@ -1,5 +1,5 @@
 .root {
-    margin-top: auto;
+    margin-top: 60px;
 }
 
 .container {
@@ -8,11 +8,14 @@
     flex-wrap: wrap;
     align-items: center;
 
-    padding: 0 32px 0 32px;
+    padding: 0 16px;
 
+    @media (min-width: 640px) {
+        padding: 0 32px 0 32px;
+    }    
 
     @media (min-width: 840px) {
-        padding: 40px 90px;
+        padding: 20px 48px 0 48px;
     }
 }
 
@@ -23,27 +26,53 @@
 .assetSecurity {
     text-align: center;
     font-size: 1.2rem;
-    max-width: 710px;
+    max-width: 650px;
 
     margin: 16px 0 40px 0;
+}
+
+.auditorsAndScore {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @media (min-width: 1280px) {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    @media (min-width: 1280px) {
+        flex-direction: row;
+        gap: 40px;
+    }
 }
 
 .logos {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 24px;
     width: 100%;
     align-items: center;
-    padding-top: 24px;
-    padding-bottom: 24px;
 
     @media (min-width: 640px) {
         flex-direction: row;
+        a:nth-child(4) {
+            margin-top: 8px;
+        }
+    
+        a:nth-child(5) {
+            margin-top: 8px;
+        }
+    
+        a:nth-child(6) {
+            margin-top: 8px;
+        }
     }
 
     @media (min-width: 840px) {
-        padding-top: 48px;
-        padding-bottom: 48px;
+        justify-content: space-between;
     }
 }
 
@@ -52,9 +81,6 @@
 }
 
 .logo {
-    width: 100%;
-    height: 100%; 
-
     @media (min-width: 640px) {
         display: inline-flex;
         margin: 0;
@@ -64,32 +90,264 @@
 .certik {
     width: 120px;
     height: 30px;
-    margin: 35px 0 35px 0;
+    display: flex;
+    justify-content: space-between;
 
-    @media (min-width: 640px) {
-        width: 180px;
-        height: 44px;
+    @media (min-width: 840px) {
+        flex-direction: column;
+        width: 160px;
+        height: 50px;
     }
 }
 
 .hacken {
+    @media (min-width: 840px) {
+        display: flex;
+        width: 72px;
+        width: 45px;
+    }
+}
+
+.hackenMobile {
+    display: flex;
     width: 53px;
     height: 60px;
     margin: 35px 0 35px 0;
 
-    @media (min-width: 640px) {
-        width: 72px;
-        height: 80px;
+    @media (min-width: 840px) {
+        display: none;
     }
 }
 
 .peckshield {
+    display: none;
+
+    @media (min-width: 840px) {
+        display: flex;
+        width: 163px;
+        height: 36px;
+    }
+}
+
+.peckshieldMobile {
+    display: flex;
     width: 120px;
     height: 24px;
     margin: 35px 0 35px 0;
 
-    @media (min-width: 640px) {
-        width: 180px;
-        height: 36px;
+    @media (min-width: 840px) {
+        display: none;
     }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-bg-secondary);
+    text-decoration: none;
+}
+
+.auditor {
+    flex: 1;
+    flex-basis: 30%;
+    padding: 16px;
+    height: 142px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 16px;
+
+    hr {
+        width: 100%;
+        border: 0;
+        height: 1px;
+        background-color: var(--color-icon-bg);
+        margin: 17px 0 16px 0;
+    }
+
+    @media (min-width: 640px) {
+        min-width: 174px;
+    }
+
+    @media (min-width: 840px) {
+        min-width: 220px;
+    }
+}
+
+.auditorLogo {
+    height: 64px;
+}
+
+.audits {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    p {
+        font-size: 0.8rem;
+        line-height: 21px;
+    }
+
+    span {
+        font-weight: 600;
+        color: white;
+        margin-right: 8px;
+    }
+
+    @media (min-width: 840px) {
+        font-size: 0.875rem;
+    }
+}
+
+.cardScore {
+    width: 100%;
+    border-radius: 24px;
+    padding: 24px;
+
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 640px) {
+        min-width: 375px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (min-width: 840px) {
+        padding: 24px 48px 24px 48px;
+    }
+
+    @media (min-width: 1280px) {
+        max-width: 375px;
+        padding: 24px 24px 16px 24px;
+        flex-direction: column;
+        height: 316px;
+    }
+}
+
+.securityScore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 140px;
+    width: 220px;
+
+    background-image: url('./assets/score.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    text-align: center;
+
+    span {
+        color: var(--color-text-secondary);
+        text-align: center;
+        font-size: 0.625rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.125rem;
+        margin-top: 6px;
+    text-decoration: none;
+    }
+
+    @media (min-width: 640px) {
+        margin-right: 40px;
+    }
+
+    @media (min-width: 840px) {
+        margin-right: 0;
+    }
+
+    @media (min-width: 1280px) {
+        height: 180px;
+        width: 180px;
+    }
+}
+
+.scoreInfo {
+    @media (min-width: 840px) {
+        padding: 24px 40px 24px 40px;
+    }
+    @media (min-width: 1280px) {
+        padding: 0;
+    }
+}
+
+.scored {
+    font-size: 1rem;
+    line-height: 1.125rem;
+    margin-top: 24px;
+    margin-bottom: 15px;
+
+    text-align: center;
+
+    span {
+        color: white;
+    }
+    
+    @media (min-width: 640px) {
+        text-align: unset;
+    }
+
+    @media (min-width: 1280px) {
+        font-size: 0.75rem;
+        text-align: center;
+        flex-direction: column;
+    }    
+}
+
+.linkWrapper {
+    text-align: center;
+
+    a {
+        text-decoration: none;
+        color: var(--color-primary);
+    }
+    
+    @media (min-width: 640px) {
+        text-align: unset;
+    }
+
+    @media (min-width: 1280px) {
+        text-align: center;
+    }
+}
+
+.auditCompletedHover {
+    color: var(--color-primary);
+    span {
+        color: var(--color-primary);
+    }
+}
+
+.auditCompleted {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+}
+
+.safetyScoreMobile {
+    display: flex;
+
+    @media (min-width: 1280px) {
+        display: none;
+    }
+}
+
+.safetyScoreDesktop {
+    display: none;
+
+    @media (min-width: 1280px) {
+        display: flex;
+    }
+}
+
+.arrow {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -14,7 +14,7 @@ export const mapMarketsData = (markets?: MarketResponse[]): MarketMapped[] => {
       totalBorrowsUsd: Number(i.totalBorrowsUsd),
       liquidity: Number(i.liquidity),
       depositApy: Number(i.supplyApy) + Number(i.supplyVenusApy),
-      borrowApy: Number(i.borrowApy) + Number(i.borrowVenusApy),
+      borrowApy: (Number(i.borrowApy) + Number(i.borrowVenusApy)) * -1,
       assetIcon,
     };
   });
@@ -27,7 +27,7 @@ function compareMarkets(a: MarketMapped, b: MarketMapped) {
 export const getMarketsToRender = (markets?: MarketMapped[]) => {
   if (!markets) return [];
   const sortedMarkets = markets.sort(compareMarkets);
-  return sortedMarkets.slice(0, 10);
+  return sortedMarkets.slice(0, 5);
 };
 
 const sumArray = (numbers: number[]) => numbers.reduce((partialSum, a) => partialSum + a, 0);

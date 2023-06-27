@@ -1,6 +1,7 @@
 .root {
     margin-top: auto;
     width: 100%;
+    background-color: var(--color-bg-secondary);
 }
 
 .container {
@@ -8,8 +9,8 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    background-color: var(--color-bg-secondary);
     padding-bottom: 10px;
+    max-width: 1280px;
 
     hr {
         display: none;
@@ -17,6 +18,7 @@
         border: 0;
         height: 1px;
         background-color: var(--color-card-border);
+        margin: 0;
     }
 
     @media (min-width: 640px) {
@@ -35,8 +37,8 @@
     padding-bottom: 24px;
 
     @media (min-width: 640px) {
-        padding-top: 48px;
-        padding-bottom: 48px;
+        padding-top: 32px;
+        padding-bottom: 32px;
     }
 
     @media (min-width: 840px) {
@@ -50,7 +52,6 @@
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    background-color: var(--color-bg-secondary);
     padding-top: 6px;
 }
 
@@ -65,6 +66,7 @@
     display: none;
     @media (min-width: 640px) {
         display: inline-flex;
+        width: 154px;
     }
 }
 
@@ -135,6 +137,8 @@
     }
     @media (min-width: 640px) {
         display: block;
+    }
+    @media (min-width: 840px) {
         margin-left: 24px;
     }
 }
@@ -160,11 +164,14 @@
 }
 
 .copyWrapper {
-    display: flex;
+    display: none;
     align-items: center;
     width: 100%;
+    padding-top: 32px;
+    padding-bottom: 32px;
 
     @media (min-width: 640px) {
+        display: flex;
         border-top: 1px solid var(--color-bg-secondary);
     }
 

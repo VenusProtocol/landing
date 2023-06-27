@@ -1,8 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
-import Intro from './Intro';
+import Background from './Background';
 import s from './MainContent.module.css';
-import Market from '../Market/Market';
 import Benefits from '../Benefits/Benefits';
 import Safety from '../Safety';
 import Protection from '../Protection';
@@ -15,8 +14,7 @@ interface IMainContentProps {
 
 const MainContent: React.FC<IMainContentProps> = ({ className }) => (
   <section className={cn(s.root, className)}>
-    <Intro />
-    <Market />
+    <Background />
     <VenusPrime />
     <Protection />
     <Governance />

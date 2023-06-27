@@ -58,10 +58,6 @@ const Footer: React.FC<IFooterProps> = ({ className }) => (
       </div>
       <hr />
       <div className={s.copyWrapper}>
-        <div className={s.copyrightAndLicense}>
-          <p className={s.copy}>© {new Date().getFullYear()} Venus Protocol</p>
-          <p className={s.copy}>Licensed & open-source under the MIT License</p>
-        </div>
         <SocialLinks className={s.socialLinksWrapperDesktop} />
       </div>
     </Container>

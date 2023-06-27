@@ -6,7 +6,8 @@
     right: 0;
     left: 0;
     z-index: 1;
-    background-color: var(--color-bg);
+    background-color: var(--color-bg-transparent);
+    transition: background-color 0.5s ease-in-out;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -16,6 +17,11 @@
         height: 80px;
     }
 }
+
+.headerAfterScroll {
+    background-color: var(--color-bg);
+}
+
 .inner {
     display: flex;
     justify-content: space-between;
