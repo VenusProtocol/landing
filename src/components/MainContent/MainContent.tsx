@@ -7,6 +7,7 @@ import Safety from '../Safety';
 import Protection from '../Protection';
 import VenusPrime from '../VenusPrime';
 import Governance from '../Governance';
+import Header from '../Header/Header';
 
 interface IMainContentProps {
   className?: string;
@@ -14,6 +15,7 @@ interface IMainContentProps {
 
 const MainContent: React.FC<IMainContentProps> = ({ className }) => (
   <section className={cn(s.root, className)}>
+    <Header />
     <Background />
     <VenusPrime />
     <Protection />

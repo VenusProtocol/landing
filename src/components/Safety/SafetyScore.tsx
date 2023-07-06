@@ -15,7 +15,8 @@ const SafetyScore: React.FC<ISafetyProps> = ({ className }) => (
     </div>
     <div className={s.scoreInfo}>
       <p className={s.scored}>
-        Venus scored <span>3rd highest</span> for security on BB Chain as assessed by Certik (June, 2021)
+        Venus scored <span>3rd highest</span> for security on BNB Chain as assessed by Certik (June,
+        2021)
       </p>
       <div className={s.linkWrapper}>
         <a href="https://skynet.certik.com/projects/venus">Learn more</a>
