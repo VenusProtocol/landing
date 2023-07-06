@@ -41,14 +41,14 @@ const auditors = [
     logoHovered: FairyproofHover,
     audits: 2,
     className: s.certik,
-    href: 'https://hacken.io/audits/venus/',
+    href: 'https://github.com/VenusProtocol/venus-protocol/blob/cb91c322f9d267cac11f532924b07a4b1991be64/audits/025_vaults_fairyproof_20230517.pdf',
   },
   {
     logo: OpenZeppelin,
     logoHovered: OpenZeppelinHover,
     audits: 2,
     className: s.certik,
-    href: 'https://hacken.io/audits/venus/',
+    href: 'https://github.com/VenusProtocol/venus-protocol/blob/develop/audits/027_swapRouter_openzeppelin_20230616.pdf',
   },
   {
     logo: Certik,
@@ -62,7 +62,7 @@ const auditors = [
     logoHovered: PeckshieldHover,
     audits: 10,
     className: s.certik,
-    href: 'https://hacken.io/audits/venus/',
+    href: 'https://github.com/VenusProtocol/isolated-pools/blob/1d60500e28d4912601bac461870c754dd9e72341/audits/037_isolatedPools_peckshield_20230625.pdf/',
   },
 ];
 
