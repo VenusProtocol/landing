@@ -143,17 +143,18 @@
 }
 
 .numProposals {
-    font-size: 2rem;
+    font-family: 'BebasNeue';
+    font-size: 2.5rem;
     text-align: center;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 3.933px;
 
     @media (min-width: 840px) {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
     }
 
     @media (min-width: 1280px) {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 }
 
@@ -180,12 +181,8 @@
         margin-right: 14px;
     }
 
-    @media (min-width: 870px) and (max-width: 900px) {
-        margin-left: 24px;
-    }
-
-    @media (min-width: 900px) and (max-width: 940px) {
-        margin-left: 12px;
+    @media (min-width: 870px) and (max-width: 1280px) {
+        margin-left: 18px;
     }
 }
 
