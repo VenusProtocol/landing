@@ -17,7 +17,6 @@ const MainContent: React.FC<IMainContentProps> = ({ className }) => (
   <section className={cn(s.root, className)}>
     <Header />
     <Background />
-    <VenusPrime />
     <Protection />
     <Governance />
     <Safety />
