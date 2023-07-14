@@ -48,7 +48,7 @@ const auditors = [
     logoHovered: OpenZeppelinHover,
     audits: 2,
     className: s.certik,
-    href: 'https://docs.venus.io/links/security-and-audits',
+    href: 'https://docs-v4.venus.io/links/security-and-audits',
   },
   {
     logo: Certik,
@@ -62,7 +62,7 @@ const auditors = [
     logoHovered: PeckshieldHover,
     audits: 10,
     className: s.certik,
-    href: 'https://docs.venus.io/links/security-and-audits',
+    href: 'https://docs-v4.venus.io/links/security-and-audits',
   },
 ];
 

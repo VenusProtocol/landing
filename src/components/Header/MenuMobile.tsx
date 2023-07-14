@@ -11,7 +11,7 @@ const content = [
     text: 'Whitepaper',
   },
   {
-    href: 'https://docs.venus.io/',
+    href: 'https://docs-v4.venus.io/',
     text: 'Docs',
   },
   {
