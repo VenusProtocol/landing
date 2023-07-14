@@ -34,4 +34,6 @@
 .close {
   margin-right: 14px;
   margin-left: auto;
+  min-height: 20px;
+  min-width: 20px;
 }
