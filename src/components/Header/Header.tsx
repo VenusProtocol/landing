@@ -18,7 +18,7 @@ const content = [
     text: 'Docs',
   },
   {
-    href: 'https://app.venus.io/market',
+    href: 'https://app.venus.io/core-pool',
     text: 'Markets',
   },
 ];
