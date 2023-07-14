@@ -13,8 +13,10 @@ const Banner: React.FC<IBannerProps> = ({ className }) => {
   return isOpen ? (
     <section className={cn(s.root, className)}>
       <div className={s.limit}>
-        <span>Announcing another V4 delivery: Venus Isolated Pools. Learn more in the new{' '}<a href="https://docs-v4.venus.io/">documentation site</a>{' '}and{' '}<a href="https://venus.io/Whitepaper.pdf">whitepaper</a></span>
-        <Close className={s.close} onClick={() => setIsOpen(false)} />
+        <div className={s.content}>
+          <span>Announcing another V4 delivery: Venus Isolated Pools. Learn more in the new <a href="https://docs-v4.venus.io/">documentation</a> site and <a href="https://github.com/VenusProtocol/venus-protocol-documentation/tree/main/whitepapers">whitepaper</a></span>
+          <Close className={s.close} onClick={() => setIsOpen(false)} />
+        </div>
       </div>
     </section>
   ) : null;

@@ -39,7 +39,7 @@ const Footer: React.FC<IFooterProps> = ({ className }) => (
             <Link
               variant="buttonTransparent"
               className={s.btn}
-              href="https://venus.io/Whitepaper.pdf"
+              href="https://github.com/VenusProtocol/venus-protocol-documentation/tree/main/whitepapers"
             >
               White paper
             </Link>
@@ -49,7 +49,7 @@ const Footer: React.FC<IFooterProps> = ({ className }) => (
             <Link
               variant="buttonTransparent"
               className={s.btnMobile}
-              href="https://venus.io/Whitepaper.pdf"
+              href="https://github.com/VenusProtocol/venus-protocol-documentation/tree/main/whitepapers"
             >
               White paper
             </Link>

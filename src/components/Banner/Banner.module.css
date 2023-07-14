@@ -3,7 +3,13 @@
   background-color: var(--color-banner-bg);
   display: flex;
   justify-content: center;
-  margin-bottom: 16px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .limit {
@@ -14,8 +20,11 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding: 14px;
+
+  span {
+    margin-left: auto;
+  }
 
   a {
     color: white;
@@ -23,6 +32,6 @@
 }
 
 .close {
-  position: absolute;
-  right: 0;
+  margin-right: 14px;
+  margin-left: auto;
 }

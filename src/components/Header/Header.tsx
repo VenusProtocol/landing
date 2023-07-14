@@ -10,11 +10,11 @@ import Banner from '../Banner/Banner';
 
 const content = [
   {
-    href: 'https://venus.io/Whitepaper.pdf',
+    href: 'https://github.com/VenusProtocol/venus-protocol-documentation/tree/main/whitepapers',
     text: 'Whitepaper',
   },
   {
-    href: 'https://docs.venus.io/',
+    href: 'https://docs-v4.venus.io/',
     text: 'Docs',
   },
   {

@@ -7,7 +7,7 @@ import s from './MenuMobile.module.css';
 
 const content = [
   {
-    href: 'https://venus.io/Whitepaper.pdf',
+    href: 'https://github.com/VenusProtocol/venus-protocol-documentation/tree/main/whitepapers',
     text: 'Whitepaper',
   },
   {
