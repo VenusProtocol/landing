@@ -12,7 +12,7 @@ const Protection: React.FC<IProtectionProps> = ({ className }) => (
     <ul className={s.list}>
       <li className={cn(s.item, s.bugBounty)} key="bounty">
         <div className={s.textWrapper}>
-          <h2>Challenge our code and earn rewards up to $1,000,000</h2>
+          <h2>Challenge our code and be rewarded</h2>
           <p>
             We encourage all to challenge our code and search for vulnerabilities. Read about our{' '}
             bug bounty rewards, and please submit any bug
