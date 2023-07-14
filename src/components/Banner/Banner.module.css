@@ -1,0 +1,28 @@
+.root {
+  width: 100vw;
+  background-color: var(--color-banner-bg);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.limit {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+  a {
+    color: white;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 0;
+}

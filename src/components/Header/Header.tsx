@@ -6,6 +6,7 @@ import NavigationLinks from '../NavigationLinks/NavigationLinks';
 import MenuMobile from './MenuMobile';
 import LinkLaunchApp from '../Link/LinkLaunchApp';
 import s from './Header.module.css';
+import Banner from '../Banner/Banner';
 
 const content = [
   {
@@ -54,6 +55,7 @@ const Header: React.FC<IHeaderProps> = ({ className }) => {
   return (
     <>
       <header id={HEADER_ID} className={cn(s.root, className)}>
+        <Banner />
         <div className={s.inner}>
           <Logo key="headerLogo" className={s.logo} />
           <button

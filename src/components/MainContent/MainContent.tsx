@@ -5,7 +5,6 @@ import s from './MainContent.module.css';
 import Benefits from '../Benefits/Benefits';
 import Safety from '../Safety';
 import Protection from '../Protection';
-import VenusPrime from '../VenusPrime';
 import Governance from '../Governance';
 import Header from '../Header/Header';
 
