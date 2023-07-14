@@ -8,8 +8,8 @@
     }
     @media (min-width: 1280px) {
         display: flex;
-        justify-content: space-between;
-        padding-top: 136px;
+        flex-direction: column;
+        padding-top: 64px;
     }
 }
 
@@ -34,75 +34,75 @@
 
 }
 
-/*.totalWrapper {}*/
+.totalWrapper {
+    border-radius: 16px;
+    background: rgba(24, 29, 42, 0.10);
+    box-shadow: 0px 8px 6px 0px rgba(0, 0, 0, 0.05), 0px 1px 1px 0px rgba(255, 255, 255, 0.25) inset, 0px -1px 1px 0px #21293A inset, 2px 3px 3px -3px #5F5A88 inset;
+    backdrop-filter: blur(50px);
+    padding: 16px 16px;
+    width: 100%;
+    
+    @media (min-width: 640px) {
+        padding: 16px 24px;
+    }
+    
+    @media (min-width: 1280px) {
+        padding: 16px 64px;
+    }
+}
 
 .totalList {
-    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
 
     @media (min-width: 640px) {
-        margin-bottom: 60px;
-        width: 100%;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
     }
 
-    @media (min-width: 840px) {
-        margin-bottom: 70px;
-    }
-
     @media (min-width: 1280px) {
-        flex-direction: column;
-        width: auto;
-        justify-content: flex-start;
         align-items: stretch;
     }
 }
 
 .totalItem {
+
     &:not(&:first-child) {
+        border-top: 1px solid var(--color-card-border);
+        padding-top: 12px;
         margin-top: 16px;
         padding-top: 16px;
-        border-top: 1px solid var(--color-bg-secondary);
 
         @media (min-width: 640px) {
             border-top: none;
             margin-top: 0;
             padding-top: 0;
         }
-
-        @media (min-width: 1280px) {
-            margin-top: 16px;
-            padding-top: 16px;
-            border-top: 1px solid var(--color-bg-secondary);
-        }
     }
 }
 
 .divider {
-    display: none;
     @media (min-width: 640px) {
         display: block;
         width: 1px;
         height: 60px;
-        background-color: var(--color-bg-secondary);
+        background-color: var(--color-bg-secondary-transparent);
     }
     @media (min-width: 840px) {
         height: 70px;
-    }
-    @media (min-width: 1280px) {
-        display: none;
     }
 }
 
 .totalTitle {
     color: var(--color-text-secondary);
-    margin-bottom: 12px;
+    font-size: 14px;
+    margin-bottom: 8px;
 }
 
 .totalSum {
+    color: var(--color-text);
     font-family: var(--font-bold);
     font-size: 24px;
 
@@ -123,9 +123,21 @@
 }
 
 .marketsWrapper {
+    margin-top: 24px;
+    border-radius: 24px;
+    padding: 0 4px 0 4px;
+    @media (min-width: 640px) {
+        box-shadow: 0px 8px 6px 0px rgba(0, 0, 0, 0.05), 0px 1px 1px 0px rgba(255, 255, 255, 0.25) inset, 0px -1px 1px 0px #21293A inset, 2px 3px 3px -3px #5F5A88 inset;
+        background: rgba(24, 29, 42, 0.50);
+        backdrop-filter: blur(50px);
+        padding: 20px 32px 0 32px;
+    }
+    @media (min-width: 840px) {
+        padding: 40px 24px 0 24px;
+    }
     @media (min-width: 1280px) {
+        padding: 40px 64px 0 64px;
         flex-grow: 1;
-        padding-left: 100px;
     }
 }
 
@@ -133,13 +145,7 @@
     display: none;
     @media (min-width: 640px) {
         display: flex;
-        padding-left: 12px;
-        padding-right: 12px;
         padding-bottom: 16px;
-    }
-    @media (min-width: 840px) {
-        padding-left: 24px;
-        padding-right: 24px;
     }
 }
 
@@ -149,35 +155,26 @@
     color: var(--color-text-secondary);
     &:not(&:first-child) {
         text-align: right;
-        padding-left: 12px;
-        @media (min-width: 840px) {
-            padding-left: 24px;
-        }
     }
-}
-
-.marketsList {
-    margin-bottom: 40px;
 }
 
 .marketItem {
     border-radius: 8px;
-    background-color: var(--color-bg-secondary);
     padding: 12px 8px;
     font-size: 14px;
 
     &+& {
         margin-top: 16px;
     }
+    
+    box-shadow: 0px 8px 6px 0px rgba(0, 0, 0, 0.05), 0px 1px 1px 0px rgba(255, 255, 255, 0.25) inset, 0px -1px 1px 0px #21293A inset, 2px 3px 3px -3px #5F5A88 inset;
+    background: rgba(24, 29, 42, 0.50);
 
     @media (min-width: 640px) {
+        box-shadow: unset;
+        background: unset;
         display: flex;
-        border-radius: 0;
-        padding: 22px 12px;
-    }
-    @media (min-width: 840px) {
-        padding-left: 24px;
-        padding-right: 24px;
+        padding: 24px 0;
     }
 }
 .marketItemSymbol {
@@ -219,19 +216,29 @@
     flex-grow: 1;
 }
 .marketItemValue {
+    color: var(--color-text);
     display: flex;
     flex-direction: column;
     width: 25%;
+    font-size: 0.875rem;
+
+    &:not(&:first-child) {
+        text-align: right;
+    }
     @media (min-width: 640px) {
         text-align: right;
         padding-left: 12px;
+        font-size: 1rem;
     }
 }
 
 .btnWrapper {
     display: flex;
     justify-content: center;
-    @media (min-width: 1280px) {
-        display: none;
+    padding: 28px;
+
+    a {
+        text-decoration: none;
+        color: var(--color-primary)
     }
 }

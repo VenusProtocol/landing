@@ -17,6 +17,10 @@
         &:active {
             background-color: var(--color-primary-active);
         }
+
+        @media (max-width: 360px) {
+            padding: 12px;
+        }
     }
 
     &_buttonTransparent {

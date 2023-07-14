@@ -1,27 +1,19 @@
-import React from "react"
-import cn from "classnames"
-import { useVenusApi } from "../../api/hooks/useVenusApi"
-import Container from "../Container/Container"
-import { nFormatter } from "../../api/utils"
-import LinkLaunchApp from "../Link/LinkLaunchApp"
-import s from "./Market.module.css"
+import React from 'react';
+import cn from 'classnames';
+import { useVenusApi } from '../../api/hooks/useVenusApi';
+import Container from '../Container/Container';
+import { nFormatter } from '../../api/utils';
+import s from './Market.module.css';
 
 interface IMarketProps {
-  className?: string
+  className?: string;
 }
 
-const loadingState = "Loading..."
+const loadingState = 'Loading...';
 
 const Market: React.FC<IMarketProps> = ({ className }) => {
-  const {
-    marketSize,
-    borrowedSum,
-    liquiditySum,
-    markets,
-    isLoading,
-    error,
-    fetchData,
-  } = useVenusApi()
+  const { marketSize, borrowedSum, liquiditySum, markets, isLoading, error, fetchData } =
+    useVenusApi();
 
   if (error) {
     return (
@@ -31,7 +23,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
           Try again
         </button>
       </Container>
-    )
+    );
   }
 
   return (
@@ -40,33 +32,25 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
         <ul className={s.totalList}>
           <li className={s.totalItem}>
             <div>
-              <p className={s.totalTitle}>Market size:</p>
-              <p className={s.totalSum}>
-                {isLoading ? loadingState : marketSize}
-              </p>
+              <p className={s.totalTitle}>Market size</p>
+              <p className={s.totalSum}>{isLoading ? loadingState : marketSize}</p>
             </div>
           </li>
           <span className={s.divider} />
           <li className={s.totalItem}>
             <div>
-              <p className={s.totalTitle}>Total Borrowed:</p>
-              <p className={s.totalSum}>
-                {isLoading ? loadingState : borrowedSum}
-              </p>
+              <p className={s.totalTitle}>Total Borrowed</p>
+              <p className={s.totalSum}>{isLoading ? loadingState : borrowedSum}</p>
             </div>
           </li>
           <span className={s.divider} />
           <li className={s.totalItem}>
             <div>
-              <p className={s.totalTitle}>Total Liquidity:</p>
-              <p className={s.totalSum}>
-                {isLoading ? loadingState : liquiditySum}
-              </p>
+              <p className={s.totalTitle}>Total Liquidity</p>
+              <p className={s.totalSum}>{isLoading ? loadingState : liquiditySum}</p>
             </div>
           </li>
         </ul>
-
-        <LinkLaunchApp className={s.launchBtnDesktop} />
       </div>
 
       {isLoading ? (
@@ -82,19 +66,15 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
           </div>
 
           <ul className={s.marketsList}>
-            {markets.map((i) => (
+            {markets.map(i => (
               <li className={s.marketItem} key={i.liquidity}>
                 <div className={s.marketItemSymbol}>
-                  <img
-                    className={s.icon}
-                    src={i.assetIcon}
-                    alt={i.underlyingSymbol}
-                  />
+                  <img className={s.icon} src={`${window.location.href}coins/${i.assetIcon.split('/').slice(-1)[0]}`} alt={i.underlyingSymbol} />
                   {i.underlyingSymbol}
                 </div>
                 <div className={s.marketItemValuesWrapper}>
                   <p className={s.marketItemValue}>
-                    <span className={s.marketItemLabel}>Market size</span> ${" "}
+                    <span className={s.marketItemLabel}>Market size</span> ${' '}
                     {nFormatter(i.totalSupplyUsd)}
                   </p>
                   <p className={s.marketItemValue}>
@@ -102,7 +82,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
                     {nFormatter(i.depositApy)}%
                   </p>
                   <p className={s.marketItemValue}>
-                    <span className={s.marketItemLabel}>Borrowed</span> ${" "}
+                    <span className={s.marketItemLabel}>Borrowed</span> ${' '}
                     {nFormatter(i.totalBorrowsUsd)}
                   </p>
                   <p className={s.marketItemValue}>
@@ -115,12 +95,12 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
           </ul>
 
           <div className={s.btnWrapper}>
-            <LinkLaunchApp />
+            <a href="https://app.venus.io">All markets</a>
           </div>
         </div>
       )}
     </Container>
-  )
-}
+  );
+};
 
-export default Market
+export default Market;

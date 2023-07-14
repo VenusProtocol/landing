@@ -1,35 +1,67 @@
-import React from "react"
-import cn from "classnames"
-import Container from "../Container/Container"
-import NavigationLinks from "../NavigationLinks/NavigationLinks"
-import { ReactComponent as Logo } from "../Header/assets/logo.svg"
-import { ReactComponent as LogoMobile } from "./assets/logoSmall.svg"
-import SocialLinks from "./SocialLinks"
-import LinkLaunchApp from "../Link/LinkLaunchApp"
-import s from "./Footer.module.css"
+import React from 'react';
+import cn from 'classnames';
+import Container from '../Container/Container';
+import NavigationLinks from '../NavigationLinks/NavigationLinks';
+import { ReactComponent as Logo } from '../Header/assets/logo.svg';
+import { ReactComponent as LogoMobile } from './assets/logoSmall.svg';
+import SocialLinks from './SocialLinks';
+import s from './Footer.module.css';
+import Link from '../Link/Link';
+
+const content = [
+  {
+    href: 'https://app.venus.io/',
+    text: 'App',
+  },
+  {
+    href: 'https://app.venus.io/market',
+    text: 'Markets',
+  },
+  {
+    href: 'https://docs-v4.venus.io/',
+    text: 'Docs',
+  },
+];
 
 interface IFooterProps {
-  className?: string
+  className?: string;
 }
 
-const Footer: React.FC<IFooterProps> = ({ className }) => {
-  return (
-    <footer className={cn(s.root, className)}>
-      <Container className={s.container}>
-        <LogoMobile key="footerLogoMobile" className={s.logoMobile} />
+const Footer: React.FC<IFooterProps> = ({ className }) => (
+  <footer className={cn(s.root, className)}>
+    <Container className={s.container}>
+      <div className={s.logoAndLinks}>
         <Logo key="footerLogo" className={s.logo} />
-        <NavigationLinks
-          classNames={{ root: s.footerNavLinksWrapper, link: s.footerLink }}
-        />
-        <SocialLinks className={s.socialLinksWrapperMobile} />
-        <LinkLaunchApp variant="buttonTransparent" className={s.btn} />
-        <div className={s.copyWrapper}>
-          <p className={s.copy}>© {new Date().getFullYear()} Venus Protocol</p>
-          <SocialLinks className={s.socialLinksWrapperDesktop} />
+        <div className={s.links}>
+          <LogoMobile key="footerLogoMobile" className={s.logoMobile} />
+          <div className={s.navOptions}>
+            <NavigationLinks content={content} classNames={{ root: s.footerNavLinksWrapper, link: s.footerLink }} />
+            <Link
+              variant="buttonTransparent"
+              className={s.btn}
+              href="https://github.com/VenusProtocol/venus-protocol-documentation/tree/main/whitepapers"
+            >
+              White paper
+            </Link>
+          </div>
+          <div className={s.navOptions}>
+            <SocialLinks className={s.socialLinksWrapperMobile} />
+            <Link
+              variant="buttonTransparent"
+              className={s.btnMobile}
+              href="https://github.com/VenusProtocol/venus-protocol-documentation/tree/main/whitepapers"
+            >
+              White paper
+            </Link>
+          </div>
         </div>
-      </Container>
-    </footer>
-  )
-}
+      </div>
+      <hr />
+      <div className={s.copyWrapper}>
+        <SocialLinks className={s.socialLinksWrapperDesktop} />
+      </div>
+    </Container>
+  </footer>
+);
 
-export default Footer
+export default Footer;
