@@ -9,12 +9,13 @@ interface IContainerProps {
   onMouseLeave?: React.MouseEventHandler<HTMLDivElement>;
 }
 
-const Container: React.FC<IContainerProps> = ({ children, className, onMouseEnter, onMouseLeave }) => (
-  <div
-    className={cn(s.root, className)}
-    onMouseEnter={onMouseEnter}
-    onMouseLeave={onMouseLeave}
-  >
+const Container: React.FC<IContainerProps> = ({
+  children,
+  className,
+  onMouseEnter,
+  onMouseLeave,
+}) => (
+  <div className={cn(s.root, className)} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
     {children}
   </div>
 );
