@@ -18,7 +18,7 @@ const VenusPrime: React.FC = () => (
           Venus Prime and the Venus Prime Token reward dedicated users of Venus Protocol with real
           yield for superior rates with their lending and borrowing activities.
         </p>
-        <Link className={s.link} href="https://community.venus.io/">
+        <Link className={s.link} href="https://docs-v4.venus.io/whats-new/prime-yield">
           Learn more
         </Link>
       </div>
