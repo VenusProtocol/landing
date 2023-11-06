@@ -9,10 +9,13 @@ interface IHoverLogoProps {
   className?: string;
 }
 
-const HoverLogo: React.FC<IHoverLogoProps> = ({ logo: Logo, hoverLogo: LogoHovered, isHovering, className }) => (
-  <div
-    className={cn(s.hoverLogo, className)}
-  >
+const HoverLogo: React.FC<IHoverLogoProps> = ({
+  logo: Logo,
+  hoverLogo: LogoHovered,
+  isHovering,
+  className,
+}) => (
+  <div className={cn(s.hoverLogo, className)}>
     {!isHovering && <Logo className={s.logo} />}
     {isHovering && <LogoHovered className={s.logo} />}
   </div>

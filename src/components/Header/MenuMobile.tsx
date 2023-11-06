@@ -26,7 +26,10 @@ interface IMenuMobileProps {
 
 const MenuMobile: React.FC<IMenuMobileProps> = ({ className }) => (
   <Container className={cn(s.root, className)}>
-    <NavigationLinks content={content} classNames={{ root: s.headerNavLinksWrapper, link: s.headerLink }} />
+    <NavigationLinks
+      content={content}
+      classNames={{ root: s.headerNavLinksWrapper, link: s.headerLink }}
+    />
     <LinkLaunchApp variant="buttonTransparent" className={s.btn} />
   </Container>
 );

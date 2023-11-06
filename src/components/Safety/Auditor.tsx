@@ -27,7 +27,12 @@ const Auditor: React.FC<ISafetyProps> = ({ auditor: a }) => {
       href={a.href}
     >
       <div className={s.auditorLogo}>
-        <HoverLogo logo={a.logo} hoverLogo={a.logoHovered} isHovering={isHovering} className={a.className} />
+        <HoverLogo
+          logo={a.logo}
+          hoverLogo={a.logoHovered}
+          isHovering={isHovering}
+          className={a.className}
+        />
       </div>
       <hr />
       <div className={s.audits}>

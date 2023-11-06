@@ -38,4 +38,3 @@ export type ProposalsData = {
 export type ProposalsResponseData = {
   data: ProposalsData;
 };
-

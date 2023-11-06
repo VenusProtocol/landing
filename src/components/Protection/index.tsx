@@ -15,8 +15,7 @@ const Protection: React.FC<IProtectionProps> = ({ className }) => (
           <h2>Challenge our code and be rewarded</h2>
           <p>
             We encourage all to challenge our code and search for vulnerabilities. Read about our{' '}
-            bug bounty rewards, and please submit any bug
-            you identify.
+            bug bounty rewards, and please submit any bug you identify.
           </p>
         </div>
         <div className={cn(s.backgroundImg, s.bugBountyImg)} />

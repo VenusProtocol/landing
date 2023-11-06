@@ -35,7 +35,10 @@ const Footer: React.FC<IFooterProps> = ({ className }) => (
         <div className={s.links}>
           <LogoMobile key="footerLogoMobile" className={s.logoMobile} />
           <div className={s.navOptions}>
-            <NavigationLinks content={content} classNames={{ root: s.footerNavLinksWrapper, link: s.footerLink }} />
+            <NavigationLinks
+              content={content}
+              classNames={{ root: s.footerNavLinksWrapper, link: s.footerLink }}
+            />
             <Link
               variant="buttonTransparent"
               className={s.btn}
