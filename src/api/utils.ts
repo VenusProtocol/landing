@@ -1,23 +1,52 @@
 import { MarketMapped, MarketResponse } from './types';
-import { iconsConfig } from './constants';
+import {
+  tokenIconUrls,
+  bscMainnetVCanAddress,
+  compoundDecimals,
+  vTokenDecimals,
+} from './constants';
+
+export const scale = (value: string | number, decimals: number) => Number(value) / 10 ** decimals;
+
+export const convertCentsToUsd = (value: string | number) => Number(value) / 100;
 
 export const mapMarketsData = (markets?: MarketResponse[]): MarketMapped[] => {
   if (!markets) return [];
 
-  return markets.map(i => {
-    const assetIcon = iconsConfig[i.underlyingSymbol as keyof typeof iconsConfig];
-    return {
+  return markets.reduce<MarketMapped[]>((acc, i) => {
+    // Hotfix to filter out vCAN token
+    if (i.address === bscMainnetVCanAddress) {
+      return acc;
+    }
+
+    const underlyingIconUrl = tokenIconUrls[i.underlyingSymbol as keyof typeof tokenIconUrls];
+
+    const tokenPriceUsd = convertCentsToUsd(i.tokenPriceCents);
+    const totalBorrowsTokens = scale(i.totalBorrowsMantissa, i.underlyingDecimal);
+
+    const totalSupplyVTokens = scale(i.totalSupplyMantissa, vTokenDecimals);
+    const exchangeRateVTokens =
+      Number(i.exchangeRateMantissa) === 0
+        ? 0
+        : 1 /
+          scale(i.exchangeRateMantissa, compoundDecimals + i.underlyingDecimal - vTokenDecimals);
+
+    const totalSupplyTokens = totalSupplyVTokens / exchangeRateVTokens;
+
+    const formattedMarket: MarketMapped = {
       ...i,
       supplyApy: Number(i.supplyApy),
-      supplyVenusApy: Number(i.supplyVenusApy),
-      totalSupplyUsd: Number(i.totalSupplyUsd),
-      totalBorrowsUsd: Number(i.totalBorrowsUsd),
-      liquidity: Number(i.liquidity),
-      depositApy: Number(i.supplyApy) + Number(i.supplyVenusApy),
-      borrowApy: (Number(i.borrowApy) + Number(i.borrowVenusApy)) * -1,
-      assetIcon,
+      supplyXvsApy: Number(i.supplyXvsApy),
+      totalSupplyUsd: totalSupplyTokens * tokenPriceUsd,
+      totalBorrowsUsd: totalBorrowsTokens * tokenPriceUsd,
+      liquidity: convertCentsToUsd(i.liquidityCents),
+      depositApy: Number(i.supplyApy) + Number(i.supplyXvsApy),
+      borrowApy: Number(i.borrowApy) - Number(i.borrowXvsApy),
+      underlyingIconUrl,
     };
-  });
+
+    return acc.concat(formattedMarket);
+  }, []);
 };
 
 function compareMarkets(a: MarketMapped, b: MarketMapped) {

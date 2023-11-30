@@ -1,25 +1,40 @@
-export const iconsConfig = {
-  SXP: 'https://app.venus.io/coins/sxp.png',
-  XVS: 'https://app.venus.io/coins/xvs.png',
-  USDC: 'https://app.venus.io/coins/usdc.png',
-  USDT: 'https://app.venus.io/coins/usdt.png',
-  BUSD: 'https://app.venus.io/coins/busd.png',
-  BNB: 'https://app.venus.io/coins/bnb.png',
-  BTCB: 'https://app.venus.io/coins/btcb.png',
-  ETH: 'https://app.venus.io/coins/eth.png',
-  LTC: 'https://app.venus.io/coins/ltc.png',
-  XRP: 'https://app.venus.io/coins/xrp.png',
-  BCH: 'https://app.venus.io/coins/bch.png',
-  DOT: 'https://app.venus.io/coins/dot.png',
-  LINK: 'https://app.venus.io/coins/link.png',
-  DAI: 'https://app.venus.io/coins/dai.png',
-  FIL: 'https://app.venus.io/coins/fil.png',
-  BETH: 'https://app.venus.io/coins/beth.png',
-  ADA: 'https://app.venus.io/coins/ada.png',
-  DOGE: 'https://app.venus.io/coins/doge.png',
-  MATIC: 'https://app.venus.io/coins/matic.png',
-  Cake: 'https://app.venus.io/coins/cake.png',
-  AAVE: 'https://app.venus.io/coins/aave.png',
-  TUSD: 'https://app.venus.io/coins/tusd.png',
-  TRX: 'https://app.venus.io/coins/trx.png',
+export const getTokenPublicUrl = (filePath: string) =>
+  `${process.env.PUBLIC_URL}/coins/${filePath}`;
+
+export const tokenIconUrls = {
+  UNI: getTokenPublicUrl('uni.svg'),
+  XVS: getTokenPublicUrl('xvs.svg'),
+  DOT: getTokenPublicUrl('dot.svg'),
+  AAVE: getTokenPublicUrl('aave.svg'),
+  SXP: getTokenPublicUrl('sxp.svg'),
+  DAI: getTokenPublicUrl('dai.svg'),
+  LTC: getTokenPublicUrl('ltc.svg'),
+  BCH: getTokenPublicUrl('bch.svg'),
+  MATIC: getTokenPublicUrl('matic.svg'),
+  TRX: getTokenPublicUrl('trx.svg'),
+  TRXOLD: getTokenPublicUrl('trx.svg'),
+  LINK: getTokenPublicUrl('link.svg'),
+  wBETH: getTokenPublicUrl('wbeth.svg'),
+  UST: getTokenPublicUrl('ust.svg'),
+  BTCB: getTokenPublicUrl('btcb.svg'),
+  BUSD: getTokenPublicUrl('busd.svg'),
+  BETH: getTokenPublicUrl('beth.svg'),
+  ADA: getTokenPublicUrl('ada.svg'),
+  XRP: getTokenPublicUrl('xrp.svg'),
+  TUSD: getTokenPublicUrl('tusd.svg'),
+  TUSDOLD: getTokenPublicUrl('tusd.svg'),
+  LUNA: getTokenPublicUrl('luna.svg'),
+  DOGE: getTokenPublicUrl('doge.svg'),
+  USDC: getTokenPublicUrl('usdc.svg'),
+  ETH: getTokenPublicUrl('eth.svg'),
+  FIL: getTokenPublicUrl('fil.svg'),
+  USDT: getTokenPublicUrl('usdt.svg'),
+  Cake: getTokenPublicUrl('cake.svg'),
+  BNB: getTokenPublicUrl('bnb.svg'),
 };
+
+export const bscMainnetVCanAddress = '0xeBD0070237a0713E8D94fEf1B728d3d993d290ef';
+
+export const compoundDecimals = 18;
+
+export const vTokenDecimals = 8;

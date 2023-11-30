@@ -1,40 +1,36 @@
 export type MarketResponse = {
+  address: string;
   supplyApy: string;
-  supplyVenusApy: string;
-  totalSupplyUsd: string;
-  totalBorrowsUsd: string;
-  liquidity: string;
+  supplyXvsApy: string;
+  totalSupplyMantissa: string;
+  totalBorrowsMantissa: string;
+  liquidityCents: string;
   borrowApy: string;
-  borrowVenusApy: string;
+  borrowXvsApy: string;
   symbol: string;
+  tokenPriceCents: string;
   underlyingSymbol: string;
+  underlyingDecimal: number;
+  exchangeRateMantissa: string;
 };
 
 export type MarketMapped = {
   supplyApy: number;
-  supplyVenusApy: number;
+  supplyXvsApy: number;
   totalSupplyUsd: number;
   totalBorrowsUsd: number;
   liquidity: number;
   borrowApy: number;
   symbol: string;
   underlyingSymbol: string;
-  assetIcon: string;
+  underlyingIconUrl: string;
   depositApy: number;
 };
 
-export type MarketsData = {
-  markets: MarketResponse[];
-};
-
 export type MarketsResponseData = {
-  data: MarketsData;
-};
-
-export type ProposalsData = {
-  total: number;
+  result: MarketResponse[];
 };
 
 export type ProposalsResponseData = {
-  data: ProposalsData;
+  total: number;
 };
