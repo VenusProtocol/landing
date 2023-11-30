@@ -60,20 +60,16 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
           <div className={s.marketLabelsDesktop}>
             <span className={s.marketLabelDesktopItem}>Assets</span>
             <span className={s.marketLabelDesktopItem}>Market size</span>
-            <span className={s.marketLabelDesktopItem}>Deposit APY</span>
+            <span className={s.marketLabelDesktopItem}>Supply APY</span>
             <span className={s.marketLabelDesktopItem}>Total borrowed</span>
             <span className={s.marketLabelDesktopItem}>Borrow APY</span>
           </div>
 
           <ul className={s.marketsList}>
             {markets.map(i => (
-              <li className={s.marketItem} key={i.liquidity}>
+              <li className={s.marketItem} key={i.symbol}>
                 <div className={s.marketItemSymbol}>
-                  <img
-                    className={s.icon}
-                    src={`${window.location.href}coins/${i.assetIcon.split('/').slice(-1)[0]}`}
-                    alt={i.underlyingSymbol}
-                  />
+                  <img className={s.icon} src={i.underlyingIconUrl} alt={i.underlyingSymbol} />
                   {i.underlyingSymbol}
                 </div>
                 <div className={s.marketItemValuesWrapper}>
@@ -82,7 +78,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
                     {nFormatter(i.totalSupplyUsd)}
                   </p>
                   <p className={s.marketItemValue}>
-                    <span className={s.marketItemLabel}>Deposit APY</span>
+                    <span className={s.marketItemLabel}>Supply APY</span>
                     {nFormatter(i.depositApy)}%
                   </p>
                   <p className={s.marketItemValue}>

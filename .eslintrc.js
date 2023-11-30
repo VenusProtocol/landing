@@ -39,7 +39,7 @@ module.exports = {
     'react/prop-types': 0,
     'react/default-props-match-prop-types': 0,
     'react/forbid-prop-types': 0,
-    "react/function-component-definition": 1,
+    'react/function-component-definition': 0,
     'react/no-unused-prop-types': 0,
     'react/prefer-stateless-function': 0,
     'react/require-default-props': 0,
@@ -58,7 +58,7 @@ module.exports = {
     // Custom
     'import/no-named-as-default': 0,
     'import/export': 0,
-    '@typescript-eslint/no-unused-vars': ["error", { "varsIgnorePattern": "^_.+" }],
+    '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^_.+' }],
     '@typescript-eslint/member-delimiter-style': [
       'error',
       {
