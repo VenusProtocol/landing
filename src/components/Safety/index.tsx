@@ -7,8 +7,8 @@ import { ReactComponent as Certik } from './assets/certik.svg';
 import { ReactComponent as CertikHover } from './assets/certikHover.svg';
 import { ReactComponent as Hacken } from './assets/hacken.svg';
 import { ReactComponent as HackenHover } from './assets/hackenHover.svg';
-import { ReactComponent as Fairyproof } from './assets/fairyproof.svg';
-import { ReactComponent as FairyproofHover } from './assets/fairyproofHover.svg';
+import { ReactComponent as Quantstamp } from './assets/quantstamp.svg';
+import { ReactComponent as QuantstampHover } from './assets/quantstampHover.svg';
 import { ReactComponent as OpenZeppelin } from './assets/openzeppelin.svg';
 import { ReactComponent as OpenZeppelinHover } from './assets/openzeppelinHover.svg';
 import { ReactComponent as Peckshield } from './assets/peckshield.svg';
@@ -37,30 +37,30 @@ const auditors = [
     href: 'https://hacken.io/audits/venus/',
   },
   {
-    logo: Fairyproof,
-    logoHovered: FairyproofHover,
-    audits: 5,
-    className: s.certik,
-    href: 'https://www.fairyproof.com/report/Venus',
+    logo: Quantstamp,
+    logoHovered: QuantstampHover,
+    audits: 6,
+    className: s.quantstamp,
+    href: 'https://certificate.quantstamp.com/',
   },
   {
     logo: OpenZeppelin,
     logoHovered: OpenZeppelinHover,
-    audits: 6,
+    audits: 8,
     className: s.certik,
     href: 'https://docs-v4.venus.io/links/security-and-audits',
   },
   {
     logo: Certik,
     logoHovered: CertikHover,
-    audits: 16,
+    audits: 24,
     className: s.certik,
     href: 'https://skynet.certik.com/projects/venus',
   },
   {
     logo: Peckshield,
     logoHovered: PeckshieldHover,
-    audits: 18,
+    audits: 21,
     className: s.certik,
     href: 'https://docs-v4.venus.io/links/security-and-audits',
   },
