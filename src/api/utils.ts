@@ -49,14 +49,20 @@ export const mapMarketsData = (markets?: MarketResponse[]): MarketMapped[] => {
   }, []);
 };
 
-function compareMarkets(a: MarketMapped, b: MarketMapped) {
+function sortByTotalSupplyUsd(a: MarketMapped, b: MarketMapped) {
   return b.totalSupplyUsd - a.totalSupplyUsd;
+}
+
+function sortBySupplyApy(a: MarketMapped, b: MarketMapped) {
+  return b.supplyApy - a.supplyApy;
 }
 
 export const getMarketsToRender = (markets?: MarketMapped[]) => {
   if (!markets) return [];
-  const sortedMarkets = markets.sort(compareMarkets);
-  return sortedMarkets.slice(0, 5);
+  // first we get all markets sorted by their size/supply in USD
+  const sortedMarkets = markets.sort(sortByTotalSupplyUsd);
+  // then we list the top 5 markets, ordered by their supply APY (higher APYs first)
+  return sortedMarkets.slice(0, 5).sort(sortBySupplyApy);
 };
 
 const sumArray = (numbers: number[]) => numbers.reduce((partialSum, a) => partialSum + a, 0);
