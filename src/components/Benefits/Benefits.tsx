@@ -18,13 +18,13 @@ const content = [
   },
   {
     icon: <Shield className={s.icon} />,
-    title: 'BEP-20',
-    text: 'All Venus Protocol assets are bound by the BEP-20 standard.',
+    title: 'BEP-20/ERC-20',
+    text: 'All Venus Protocol assets are bound by the BEP-20 and ERC-20 standards.',
   },
   {
     icon: <Dots className={s.icon} />,
-    title: 'Scalable',
-    text: 'Built on BNB Chain for fast, secure, and low cost transactions.',
+    title: 'Multichain',
+    text: 'Built on EVM-compatible chains for fast, secure, and low cost transactions.',
   },
 ];
 
