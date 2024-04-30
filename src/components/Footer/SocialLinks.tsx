@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import { ReactComponent as IconTelegram } from './assets/telegram.svg';
 import { ReactComponent as IconDiscord } from './assets/discord.svg';
 import { ReactComponent as IconTwitter } from './assets/twitter.svg';
 import { ReactComponent as IconGithub } from './assets/github.svg';
@@ -10,6 +11,10 @@ interface ISocialLinksProps {
 }
 
 const socialLinks = [
+  {
+    icon: <IconTelegram className={s.socialIcon} />,
+    href: 'https://t.me/venusprotocol',
+  },
   {
     icon: <IconDiscord className={s.socialIcon} />,
     href: 'https://discord.gg/pTQ9EBHYtF',
