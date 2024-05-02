@@ -5,17 +5,20 @@ import { ReactComponent as Code4rena } from './assets/c4.svg';
 import { ReactComponent as Code4renaHover } from './assets/c4Hover.svg';
 import { ReactComponent as Certik } from './assets/certik.svg';
 import { ReactComponent as CertikHover } from './assets/certikHover.svg';
-import { ReactComponent as Hacken } from './assets/hacken.svg';
-import { ReactComponent as HackenHover } from './assets/hackenHover.svg';
 import { ReactComponent as Quantstamp } from './assets/quantstamp.svg';
 import { ReactComponent as QuantstampHover } from './assets/quantstampHover.svg';
 import { ReactComponent as OpenZeppelin } from './assets/openzeppelin.svg';
 import { ReactComponent as OpenZeppelinHover } from './assets/openzeppelinHover.svg';
 import { ReactComponent as Peckshield } from './assets/peckshield.svg';
 import { ReactComponent as PeckshieldHover } from './assets/peckshieldHover.svg';
+import { ReactComponent as Cantina } from './assets/cantina.svg';
+import { ReactComponent as CantinaHover } from './assets/cantinaHover.svg';
+import { ReactComponent as Pessimistic } from './assets/pessimistic.svg';
+import { ReactComponent as PessimisticHover } from './assets/pessimisticHover.svg';
 import s from './Safety.module.css';
 import SafetyScore from './SafetyScore';
 import Auditor from './Auditor';
+import OtherAuditors from './OtherAuditors';
 
 interface ISafetyProps {
   className?: string;
@@ -23,30 +26,23 @@ interface ISafetyProps {
 
 const auditors = [
   {
-    logo: Code4rena,
-    logoHovered: Code4renaHover,
-    audits: 2,
+    logo: OpenZeppelin,
+    logoHovered: OpenZeppelinHover,
+    audits: 8,
     className: s.certik,
-    href: 'https://code4rena.com/contests/2023-05-venus-protocol-isolated-pools',
-  },
-  {
-    logo: Hacken,
-    logoHovered: HackenHover,
-    audits: 4,
-    className: s.hacken,
-    href: 'https://hacken.io/audits/venus/',
+    href: 'https://docs-v4.venus.io/links/security-and-audits',
   },
   {
     logo: Quantstamp,
     logoHovered: QuantstampHover,
-    audits: 6,
+    audits: 11,
     className: s.quantstamp,
     href: 'https://certificate.quantstamp.com/',
   },
   {
-    logo: OpenZeppelin,
-    logoHovered: OpenZeppelinHover,
-    audits: 8,
+    logo: Peckshield,
+    logoHovered: PeckshieldHover,
+    audits: 21,
     className: s.certik,
     href: 'https://docs-v4.venus.io/links/security-and-audits',
   },
@@ -58,11 +54,25 @@ const auditors = [
     href: 'https://skynet.certik.com/projects/venus',
   },
   {
-    logo: Peckshield,
-    logoHovered: PeckshieldHover,
-    audits: 21,
+    logo: Code4rena,
+    logoHovered: Code4renaHover,
+    audits: 2,
     className: s.certik,
-    href: 'https://docs-v4.venus.io/links/security-and-audits',
+    href: 'https://code4rena.com/contests/2023-05-venus-protocol-isolated-pools',
+  },
+  {
+    logo: Cantina,
+    logoHovered: CantinaHover,
+    audits: 1,
+    className: s.cantina,
+    href: 'https://cantina.xyz/competitions/ddf86a5c-6f63-430f-aadc-d8742b4b1bcf',
+  },
+  {
+    logo: Pessimistic,
+    logoHovered: PessimisticHover,
+    audits: 2,
+    className: s.cantina,
+    href: 'https://github.com/pessimistic-io/audits',
   },
 ];
 
@@ -79,6 +89,7 @@ const Safety: React.FC<ISafetyProps> = ({ className }) => (
           {auditors.map(a => (
             <Auditor auditor={a} />
           ))}
+          <OtherAuditors />
         </div>
         <SafetyScore className={s.safetyScoreDesktop} />
       </div>

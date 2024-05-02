@@ -49,10 +49,10 @@
 
 .logos {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 24px;
+    gap: 16px;
     width: 100%;
     align-items: center;
 
@@ -95,13 +95,13 @@
 
     @media (min-width: 840px) {
         flex-direction: column;
-        width: 160px;
+        width: 130px;
         height: 50px;
     }
 }
 
 .quantstamp {
-    width: 200px;
+    width: 155px;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -113,22 +113,17 @@
     }
 }
 
-.hacken {
-    @media (min-width: 840px) {
-        display: flex;
-        width: 72px;
-        width: 45px;
-    }
-}
-
-.hackenMobile {
+.cantina {
+    width: 150px;
+    height: 50px;
     display: flex;
-    width: 53px;
-    height: 60px;
-    margin: 35px 0 35px 0;
+    justify-content: center;
+    align-items: center;
 
     @media (min-width: 840px) {
-        display: none;
+        flex-direction: column;
+        width: 180px;
+        height: 55px;
     }
 }
 
@@ -164,11 +159,11 @@
 
 .auditor {
     flex: 1;
-    flex-basis: 30%;
+    flex-basis: 33%;
     padding: 16px;
     height: 142px;
     cursor: pointer;
-    width: 100%;
+    width: calc(50% - 16px);
     border-radius: 16px;
 
     hr {
@@ -180,11 +175,38 @@
     }
 
     @media (min-width: 640px) {
-        min-width: 174px;
+        flex-basis: 25%;
+        width: calc(33% - 16px);
     }
 
     @media (min-width: 840px) {
-        min-width: 220px;
+        flex-basis: 20%;
+        width: calc(25% - 16px);
+    }
+}
+
+.otherAuditors {
+    display: flex;
+    flex: 1;
+    flex-basis: 33%;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    height: 142px;
+    cursor: pointer;
+    width: calc(50% - 16px);
+    border-radius: 16px;
+    border-style: dashed;
+    border-color: var(--color-card-border);
+
+    @media (min-width: 640px) {
+        flex-basis: 59%;
+        width: calc(33% - 16px);
+    }
+
+    @media (min-width: 840px) {
+        flex-basis: 20%;
+        width: calc(25% - 16px);
     }
 }
 
@@ -266,7 +288,7 @@
         font-weight: 400;
         line-height: 1.125rem;
         margin-top: 6px;
-    text-decoration: none;
+        text-decoration: none;
     }
 
     @media (min-width: 640px) {
