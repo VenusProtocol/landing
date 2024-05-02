@@ -37,7 +37,7 @@ const Auditor: React.FC<ISafetyProps> = ({ auditor: a }) => {
       <hr />
       <div className={s.audits}>
         <p className={isHovering ? s.auditCompletedHover : s.auditCompleted}>
-          <span>{a.audits}</span> Audit{a.audits > 1 ? 's' : null} Completed
+          <span>{a.audits}</span> Audit{a.audits > 1 ? 's' : null}
         </p>
         <HoverLogo className={s.arrow} logo={Arrow} hoverLogo={ArrowBlue} isHovering={isHovering} />
       </div>
