@@ -17,7 +17,7 @@ const socialLinks = [
   },
   {
     icon: <IconDiscord className={s.socialIcon} />,
-    href: 'https://discord.gg/pTQ9EBHYtF',
+    href: 'https://discord.gg/venus-protocol-912811548651708448',
   },
   {
     icon: <IconTwitter className={s.socialIcon} />,
