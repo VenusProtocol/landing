@@ -35,117 +35,48 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+    width: 100%;
 
     @media (min-width: 1280px) {
         flex-direction: row;
-        gap: 40px;
-    }
-
-    @media (min-width: 1280px) {
-        flex-direction: row;
-        gap: 40px;
+        gap: 32px;
     }
 }
 
 .logos {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 16px;
-    width: 100%;
-    align-items: center;
+    display: grid;
+    flex-direction: column;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
 
     @media (min-width: 640px) {
-        flex-direction: row;
-        a:nth-child(4) {
-            margin-top: 8px;
-        }
-    
-        a:nth-child(5) {
-            margin-top: 8px;
-        }
-    
-        a:nth-child(6) {
-            margin-top: 8px;
-        }
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     @media (min-width: 840px) {
-        justify-content: space-between;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 
-.hoverLogo {
+.logoContainer {
     position: relative;
-}
-
-.logo {
-    @media (min-width: 640px) {
-        display: inline-flex;
-        margin: 0;
-    }
-}
-
-.certik {
-    width: 120px;
-    height: 30px;
+    width: 100%;
+    max-width: 142px;
     display: flex;
-    justify-content: space-between;
-
-    @media (min-width: 840px) {
-        flex-direction: column;
-        width: 130px;
-        height: 50px;
-    }
 }
 
-.quantstamp {
-    width: 155px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-
-    @media (min-width: 840px) {
-        flex-direction: column;
-        width: 207px;
-        height: 55px;
-    }
+.logo, .logoHovered {
+    width: 100%;
+    transition: opacity 250ms linear;
 }
 
-.cantina {
-    width: 150px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @media (min-width: 840px) {
-        flex-direction: column;
-        width: 180px;
-        height: 55px;
-    }
-}
-
-.peckshield {
-    display: none;
-
-    @media (min-width: 840px) {
-        display: flex;
-        width: 163px;
-        height: 36px;
-    }
-}
-
-.peckshieldMobile {
-    display: flex;
-    width: 120px;
-    height: 24px;
-    margin: 35px 0 35px 0;
-
-    @media (min-width: 840px) {
-        display: none;
-    }
+.logoHovered {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .card {
@@ -155,68 +86,67 @@
     align-items: center;
     background-color: var(--color-bg-secondary);
     text-decoration: none;
+    overflow: hidden;
 }
 
 .auditor {
-    flex: 1;
-    flex-basis: 33%;
     padding: 16px;
-    height: 142px;
     cursor: pointer;
-    width: calc(50% - 16px);
     border-radius: 16px;
+    height: 142px;
 
     hr {
         width: 100%;
         border: 0;
         height: 1px;
         background-color: var(--color-icon-bg);
-        margin: 17px 0 16px 0;
+        margin: 16px 0;
     }
 
-    @media (min-width: 640px) {
-        flex-basis: 25%;
-        width: calc(33% - 16px);
-    }
+    &:hover {
+        .arrow {
+            color: #3A78FF;
+        }
 
-    @media (min-width: 840px) {
-        flex-basis: 20%;
-        width: calc(25% - 16px);
+        .logoHovered {
+            opacity: 1;
+        }
     }
 }
 
 .otherAuditors {
     display: flex;
-    flex: 1;
-    flex-basis: 33%;
     align-items: center;
     justify-content: center;
     padding: 16px;
     height: 142px;
     cursor: pointer;
-    width: calc(50% - 16px);
     border-radius: 16px;
     border-style: dashed;
     border-color: var(--color-card-border);
 
     @media (min-width: 640px) {
-        flex-basis: 59%;
-        width: calc(33% - 16px);
+        grid-column: span 2;
     }
 
     @media (min-width: 840px) {
-        flex-basis: 20%;
-        width: calc(25% - 16px);
+        grid-column: span 1;
     }
 }
 
-.auditorLogo {
-    height: 64px;
+.otherAuditsLink {
+    text-align: center;
+}
+
+.auditorLogoContainer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
 }
 
 .audits {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -242,25 +172,34 @@
     border-radius: 24px;
     padding: 24px;
 
-    display: flex;
-    justify-content: center;
-
-    @media (min-width: 640px) {
-        min-width: 375px;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-
     @media (min-width: 840px) {
         padding: 24px 48px 24px 48px;
     }
 
     @media (min-width: 1280px) {
-        max-width: 375px;
         padding: 24px 24px 16px 24px;
+        width: 375px;
+    }
+}
+
+.cardScoreContent {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    @media (min-width: 640px) {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (min-width: 1280px) {
         flex-direction: column;
-        height: 316px;
     }
 }
 
@@ -291,35 +230,15 @@
         text-decoration: none;
     }
 
-    @media (min-width: 640px) {
-        margin-right: 40px;
-    }
-
-    @media (min-width: 840px) {
-        margin-right: 0;
-    }
-
     @media (min-width: 1280px) {
         height: 180px;
         width: 180px;
     }
 }
 
-.scoreInfo {
-    @media (min-width: 840px) {
-        padding: 24px 40px 24px 40px;
-    }
-    @media (min-width: 1280px) {
-        padding: 0;
-    }
-}
-
 .scored {
     font-size: 1rem;
-    line-height: 1.125rem;
-    margin-top: 24px;
-    margin-bottom: 15px;
-
+    line-height: 1.5rem;
     text-align: center;
 
     span {
@@ -331,10 +250,14 @@
     }
 
     @media (min-width: 1280px) {
-        font-size: 0.75rem;
+        font-size: 0.875rem;
         text-align: center;
-        flex-direction: column;
-    }    
+    }
+    
+    a {
+        text-decoration: none;
+        color: var(--color-primary);
+    }
 }
 
 .linkWrapper {
@@ -354,16 +277,12 @@
     }
 }
 
-.auditCompletedHover {
-    color: var(--color-primary);
-    span {
-        color: var(--color-primary);
-    }
-}
-
 .auditCompleted {
     color: var(--color-text-secondary);
     text-decoration: none;
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
 }
 
 .safetyScoreMobile {
@@ -383,7 +302,7 @@
 }
 
 .arrow {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-shrink: 0;
+    color: #A9ABC7;
+    transition: color 250ms linear;
 }

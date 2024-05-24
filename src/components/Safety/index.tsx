@@ -1,20 +1,20 @@
 import React from 'react';
 import cn from 'classnames';
 import Container from '../Container/Container';
-import { ReactComponent as Code4rena } from './assets/c4.svg';
-import { ReactComponent as Code4renaHover } from './assets/c4Hover.svg';
-import { ReactComponent as Certik } from './assets/certik.svg';
-import { ReactComponent as CertikHover } from './assets/certikHover.svg';
-import { ReactComponent as Quantstamp } from './assets/quantstamp.svg';
-import { ReactComponent as QuantstampHover } from './assets/quantstampHover.svg';
-import { ReactComponent as OpenZeppelin } from './assets/openzeppelin.svg';
-import { ReactComponent as OpenZeppelinHover } from './assets/openzeppelinHover.svg';
-import { ReactComponent as Peckshield } from './assets/peckshield.svg';
-import { ReactComponent as PeckshieldHover } from './assets/peckshieldHover.svg';
-import { ReactComponent as Cantina } from './assets/cantina.svg';
-import { ReactComponent as CantinaHover } from './assets/cantinaHover.svg';
-import { ReactComponent as Pessimistic } from './assets/pessimistic.svg';
-import { ReactComponent as PessimisticHover } from './assets/pessimisticHover.svg';
+import { ReactComponent as PessimisticLogo } from './assets/pessimisticLogo.svg';
+import { ReactComponent as PessimisticLogoGray } from './assets/pessimisticLogoGray.svg';
+import { ReactComponent as CantinaLogo } from './assets/cantinaLogo.svg';
+import { ReactComponent as CantinaLogoGray } from './assets/cantinaLogoGray.svg';
+import { ReactComponent as PeckShieldLogo } from './assets/peckShieldLogo.svg';
+import { ReactComponent as PeckShieldLogoGray } from './assets/peckShieldLogoGray.svg';
+import { ReactComponent as CertikLogo } from './assets/certikLogo.svg';
+import { ReactComponent as CertikLogoGray } from './assets/certikLogoGray.svg';
+import { ReactComponent as OpenZeppelinLogo } from './assets/openZeppelinLogo.svg';
+import { ReactComponent as OpenZeppelinLogoGray } from './assets/openZeppelinLogoGray.svg';
+import { ReactComponent as QuantstampLogo } from './assets/quantstampLogo.svg';
+import { ReactComponent as QuantstampLogoGray } from './assets/quantstampLogoGray.svg';
+import { ReactComponent as Code4renaLogo } from './assets/code4renaLogo.svg';
+import { ReactComponent as Code4renaLogoGray } from './assets/code4renaLogoGray.svg';
 import s from './Safety.module.css';
 import SafetyScore from './SafetyScore';
 import Auditor from './Auditor';
@@ -26,52 +26,45 @@ interface ISafetyProps {
 
 const auditors = [
   {
-    logo: OpenZeppelin,
-    logoHovered: OpenZeppelinHover,
+    Logo: OpenZeppelinLogoGray,
+    LogoHovered: OpenZeppelinLogo,
     audits: 8,
-    className: s.certik,
-    href: 'https://docs-v4.venus.io/links/security-and-audits',
-  },
-  {
-    logo: Quantstamp,
-    logoHovered: QuantstampHover,
-    audits: 11,
-    className: s.quantstamp,
     href: 'https://certificate.quantstamp.com/',
   },
   {
-    logo: Peckshield,
-    logoHovered: PeckshieldHover,
-    audits: 21,
-    className: s.certik,
+    Logo: QuantstampLogoGray,
+    LogoHovered: QuantstampLogo,
+    audits: 11,
     href: 'https://docs-v4.venus.io/links/security-and-audits',
   },
   {
-    logo: Certik,
-    logoHovered: CertikHover,
+    Logo: PeckShieldLogoGray,
+    LogoHovered: PeckShieldLogo,
+    audits: 21,
+    href: 'https://docs-v4.venus.io/links/security-and-audits',
+  },
+  {
+    Logo: CertikLogoGray,
+    LogoHovered: CertikLogo,
     audits: 24,
-    className: s.certik,
     href: 'https://skynet.certik.com/projects/venus',
   },
   {
-    logo: Code4rena,
-    logoHovered: Code4renaHover,
+    Logo: Code4renaLogoGray,
+    LogoHovered: Code4renaLogo,
     audits: 2,
-    className: s.certik,
     href: 'https://code4rena.com/contests/2023-05-venus-protocol-isolated-pools',
   },
   {
-    logo: Cantina,
-    logoHovered: CantinaHover,
+    Logo: CantinaLogoGray,
+    LogoHovered: CantinaLogo,
     audits: 1,
-    className: s.cantina,
     href: 'https://cantina.xyz/competitions/ddf86a5c-6f63-430f-aadc-d8742b4b1bcf',
   },
   {
-    logo: Pessimistic,
-    logoHovered: PessimisticHover,
+    Logo: PessimisticLogoGray,
+    LogoHovered: PessimisticLogo,
     audits: 2,
-    className: s.cantina,
     href: 'https://github.com/pessimistic-io/audits',
   },
 ];
