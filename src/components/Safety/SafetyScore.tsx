@@ -9,18 +9,16 @@ interface ISafetyProps {
 
 const SafetyScore: React.FC<ISafetyProps> = ({ className }) => (
   <div className={cn(s.card, s.cardScore, className)}>
-    <div className={s.securityScore}>
-      <Score90 />
-      <span>Security Score</span>
-    </div>
-    <div className={s.scoreInfo}>
+    <div className={s.cardScoreContent}>
+      <div className={s.securityScore}>
+        <Score90 />
+        <span>Security Score</span>
+      </div>
+
       <p className={s.scored}>
-        Venus scored <span>3rd highest</span> for security on BNB Chain as assessed by Certik (June,
+        Venus scored <a href="https://skynet.certik.com/projects/venus">3rd highest</a> for security on BNB Chain as assessed by Certik (June,
         2021)
       </p>
-      <div className={s.linkWrapper}>
-        <a href="https://skynet.certik.com/projects/venus">Learn more</a>
-      </div>
     </div>
   </div>
 );
