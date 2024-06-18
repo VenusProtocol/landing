@@ -1,5 +1,5 @@
 export const getTokenPublicUrl = (filePath: string) =>
-  `${process.env.PUBLIC_URL}/coins/${filePath}`;
+  new URL(`/coins/${filePath}`, import.meta.url).href;
 
 export const tokenIconUrls = {
   UNI: getTokenPublicUrl('uni.svg'),
