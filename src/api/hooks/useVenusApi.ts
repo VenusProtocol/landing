@@ -1,42 +1,86 @@
-import { useEffect, useState } from 'react';
-import { MarketMapped } from '../types';
-import { getMarketsToRender, getTotal } from '../utils';
-import fetchMarkets from '../index';
+import { useQuery } from '@tanstack/react-query';
+import { convertCentsToUsd, getMarketsToRender, scale } from '../utils';
+import getLegacyPoolMarkets from '../index';
+import { getIsolatedMarkets } from '../../subgraph/queries/getIsolatedMarkets';
+import { MainChainId } from '../../subgraph/types';
+
+const chainIds = Object.values(MainChainId).filter(
+  (chainId): chainId is MainChainId => !Number.isNaN(Number(chainId)),
+);
 
 export const useVenusApi = () => {
-  const [data, setData] = useState<MarketMapped[]>();
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<Error | undefined>();
+  const {
+    data: getLegacyPoolMarketsData,
+    isLoading: isGetLegacyPoolMarketsLoading,
+    error: getLegacyPoolMarketsError,
+    refetch,
+  } = useQuery({
+    queryKey: ['legacyPoolMarkets'],
+    queryFn: getLegacyPoolMarkets,
+  });
 
-  const fetchData = () => {
-    fetchMarkets()
-      .then(res => {
-        setData(res);
-        setIsLoading(false);
-      })
-      .catch(e => {
-        setError(e);
-        setIsLoading(false);
-      });
-  };
+  const {
+    data: getIsolatedPoolMarketsData,
+    isLoading: isGetIsolatedPoolMarketsLoading,
+    error: getIsolatedPoolMarketsError,
+  } = useQuery({
+    queryKey: ['isolatedPoolMarkets'],
+    queryFn: async () => {
+      const results = await Promise.all(chainIds.map(chainId => getIsolatedMarkets({ chainId })));
+      return results.map(result => result.markets).flat();
+    },
+  });
 
-  useEffect(() => {
-    setIsLoading(true);
-    fetchData();
-  }, []);
+  const topMarkets = getMarketsToRender(getLegacyPoolMarketsData);
 
-  const markets = getMarketsToRender(data);
-  const marketSize = getTotal('totalSupplyUsd', data);
-  const borrowedSum = getTotal('totalBorrowsUsd', data);
-  const liquiditySum = getTotal('liquidity', data);
+  const marketCount =
+    (getLegacyPoolMarketsData?.length || 0) + (getIsolatedPoolMarketsData?.length || 0);
+
+  const legacyPool = (getLegacyPoolMarketsData ?? []).reduce(
+    (acc, data) => ({
+      marketSize: acc.marketSize + data.totalSupplyUsd,
+      borrowedSum: acc.borrowedSum + data.totalBorrowsUsd,
+      liquiditySum: acc.liquiditySum + data.liquidity,
+    }),
+    {
+      marketSize: 0,
+      borrowedSum: 0,
+      liquiditySum: 0,
+    },
+  );
+
+  const isolatedPools = (getIsolatedPoolMarketsData ?? []).reduce(
+    (acc, data) => {
+      const underlyingTokenPriceUsd = convertCentsToUsd(data.underlyingPriceCents);
+
+      const totalSupplyTokens = scale(data.totalSupplyMantissa, data.underlyingDecimals);
+      const totalSupplyUsd = totalSupplyTokens * underlyingTokenPriceUsd;
+
+      const totalBorrowsTokens = scale(data.totalBorrowsMantissa, data.underlyingDecimals);
+      const totalBorrowsUsd = totalBorrowsTokens * underlyingTokenPriceUsd;
+
+      return {
+        marketSize: acc.marketSize + totalSupplyUsd,
+        borrowedSum: acc.borrowedSum + totalBorrowsUsd,
+        liquiditySum: acc.liquiditySum + (totalSupplyUsd - totalBorrowsUsd),
+      };
+    },
+    {
+      marketSize: 0,
+      borrowedSum: 0,
+      liquiditySum: 0,
+    },
+  );
 
   return {
-    marketSize,
-    borrowedSum,
-    liquiditySum,
-    markets,
-    isLoading,
-    error,
-    fetchData,
+    marketSize: legacyPool.marketSize + isolatedPools.marketSize,
+    borrowedSum: legacyPool.borrowedSum + isolatedPools.borrowedSum,
+    liquiditySum: legacyPool.liquiditySum + isolatedPools.liquiditySum,
+    topMarkets,
+    marketCount,
+    chainCount: chainIds.length,
+    isLoading: isGetLegacyPoolMarketsLoading || isGetIsolatedPoolMarketsLoading,
+    error: getLegacyPoolMarketsError || getIsolatedPoolMarketsError,
+    refetch,
   };
 };

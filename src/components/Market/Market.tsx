@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { useVenusApi } from '../../api/hooks/useVenusApi';
 import Container from '../Container/Container';
-import { nFormatter } from '../../api/utils';
+import { formatUsd, nFormatter } from '../../api/utils';
 import s from './Market.module.css';
 
 interface IMarketProps {
@@ -12,14 +12,23 @@ interface IMarketProps {
 const loadingState = 'Loading...';
 
 const Market: React.FC<IMarketProps> = ({ className }) => {
-  const { marketSize, borrowedSum, liquiditySum, markets, isLoading, error, fetchData } =
-    useVenusApi();
+  const {
+    marketSize,
+    marketCount,
+    chainCount,
+    borrowedSum,
+    liquiditySum,
+    topMarkets,
+    isLoading,
+    error,
+    refetch,
+  } = useVenusApi();
 
   if (error) {
     return (
       <Container className={cn(s.root, className)}>
         <p>{error.message}</p>
-        <button className={s.btn} type="button" onClick={fetchData}>
+        <button className={s.btn} type="button" onClick={() => refetch()}>
           Try again
         </button>
       </Container>
@@ -33,24 +42,29 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
           <li className={s.totalItem}>
             <div>
               <p className={s.totalTitle}>Market size</p>
-              <p className={s.totalSum}>{isLoading ? loadingState : marketSize}</p>
+              <p className={s.totalSum}>{isLoading ? loadingState : formatUsd(marketSize)}</p>
             </div>
           </li>
           <span className={s.divider} />
           <li className={s.totalItem}>
             <div>
               <p className={s.totalTitle}>Total Borrowed</p>
-              <p className={s.totalSum}>{isLoading ? loadingState : borrowedSum}</p>
+              <p className={s.totalSum}>{isLoading ? loadingState : formatUsd(borrowedSum)}</p>
             </div>
           </li>
           <span className={s.divider} />
           <li className={s.totalItem}>
             <div>
               <p className={s.totalTitle}>Total Liquidity</p>
-              <p className={s.totalSum}>{isLoading ? loadingState : liquiditySum}</p>
+              <p className={s.totalSum}>{isLoading ? loadingState : formatUsd(liquiditySum)}</p>
             </div>
           </li>
         </ul>
+
+        <p className={s.totalDescription}>
+          Our liquidities are distributed across <span>{marketCount}</span> markets on{' '}
+          <span>{chainCount}</span> networks
+        </p>
       </div>
 
       {isLoading ? (
@@ -66,7 +80,7 @@ const Market: React.FC<IMarketProps> = ({ className }) => {
           </div>
 
           <ul className={s.marketsList}>
-            {markets.map(i => (
+            {topMarkets.map(i => (
               <li className={s.marketItem} key={i.symbol}>
                 <div className={s.marketItemSymbol}>
                   <img className={s.icon} src={i.underlyingIconUrl} alt={i.underlyingSymbol} />

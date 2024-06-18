@@ -56,6 +56,9 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    border-bottom: 1px solid var(--color-card-border);
+    padding-bottom: 16px;
+    margin-bottom: 16px;
 
     @media (min-width: 640px) {
         flex-direction: row;
@@ -112,6 +115,16 @@
 
     @media (min-width: 840px) {
         font-size: 24px;
+    }
+}
+
+.totalDescription {
+    width: 100%;
+    text-align: center;
+    font-size: 0.75rem;
+
+    span {
+        color: #00C38E;
     }
 }
 

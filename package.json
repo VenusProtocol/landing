@@ -11,6 +11,8 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
     "classnames": "^2.3.1",
+    "graphql": "^16.8.1",
+    "graphql-request": "^7.0.1",
     "normalize.css": "^8.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -26,7 +28,9 @@
     "preview": "vite preview",
     "lint:fix": "yarn lint --fix && yarn pretty --write",
     "lint": "yarn run eslint .",
-    "pretty": "yarn prettier \"src/**/*.{js,jsx,ts,tsx,html,json,md}\" public/**/*.html --check"
+    "pretty": "yarn prettier \"src/**/*.{js,jsx,ts,tsx,html,json,md}\" public/**/*.html --check",
+    "generate-subgraph-types": "dotenv -- graphql-codegen --config src/subgraph/codegen.ts",
+    "postinstall": "yarn run generate-subgraph-types"
   },
   "browserslist": {
     "production": [
@@ -41,6 +45,8 @@
     ]
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "5.0.2",
+    "@graphql-codegen/client-preset": "4.2.6",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.12",
     "@types/react": "^18.3.3",
@@ -49,6 +55,7 @@
     "@typescript-eslint/parser": "^7.11.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^9.0.0",
+    "dotenv-cli": "^7.4.2",
     "eslint": "^8",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^18.0.0",
