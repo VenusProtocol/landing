@@ -65,22 +65,14 @@ export const getMarketsToRender = (markets?: MarketMapped[]) => {
   return sortedMarkets.slice(0, 5).sort(sortBySupplyApy);
 };
 
-const sumArray = (numbers: number[]) => numbers.reduce((partialSum, a) => partialSum + a, 0);
-
 const addSpaceBeforeUSDSymbol = (string: string) => string.replace(/^(\D+)/, '$\u00a0');
 
-export const getTotal = (
-  key: 'totalSupplyUsd' | 'totalBorrowsUsd' | 'liquidity',
-  markets?: MarketMapped[],
-) => {
-  if (!markets) return [];
-  const totalSupplyUsd = markets.map(i => i[key]);
-  const sum = sumArray(totalSupplyUsd);
-  const formattedSum = new Intl.NumberFormat('en-EN', {
+export const formatUsd = (value: number) => {
+  const formattedValue = new Intl.NumberFormat('en-EN', {
     style: 'currency',
     currency: 'USD',
-  }).format(sum);
-  return addSpaceBeforeUSDSymbol(formattedSum);
+  }).format(value);
+  return addSpaceBeforeUSDSymbol(formattedValue);
 };
 
 export const nFormatter = (num: number, digits = 2) => {

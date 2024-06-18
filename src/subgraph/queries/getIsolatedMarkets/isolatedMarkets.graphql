@@ -1,0 +1,10 @@
+query IsolatedMarkets {
+  markets {
+    id
+    exchangeRateMantissa
+    totalSupplyMantissa
+    totalBorrowsMantissa
+    underlyingPriceCents
+    underlyingDecimals
+  }
+}
