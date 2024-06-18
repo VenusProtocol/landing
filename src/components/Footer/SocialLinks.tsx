@@ -1,9 +1,9 @@
 import React from 'react';
 import cn from 'classnames';
-import { ReactComponent as IconTelegram } from './assets/telegram.svg';
-import { ReactComponent as IconDiscord } from './assets/discord.svg';
-import { ReactComponent as IconTwitter } from './assets/twitter.svg';
-import { ReactComponent as IconGithub } from './assets/github.svg';
+import IconTelegram from './assets/telegram.svg?react';
+import IconDiscord from './assets/discord.svg?react';
+import IconTwitter from './assets/twitter.svg?react';
+import IconGithub from './assets/github.svg?react';
 import s from './SocialLinks.module.css';
 
 interface ISocialLinksProps {

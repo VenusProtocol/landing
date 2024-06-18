@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import s from './Safety.module.css';
-import { ReactComponent as Score90 } from './assets/score90.svg';
+import Score90 from './assets/score90.svg?react';
 
 interface ISafetyProps {
   className?: string;

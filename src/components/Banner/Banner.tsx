@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
 import s from './Banner.module.css';
-import { ReactComponent as Close } from './assets/close.svg';
+import Close from './assets/close.svg?react';
 
 interface IBannerProps {
   className?: string;

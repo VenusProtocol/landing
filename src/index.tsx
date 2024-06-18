@@ -1,16 +1,16 @@
 import React from 'react';
-import { hydrate, render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import 'normalize.css';
 import './assets/styles/index.css';
 
-const rootElement = document.getElementById('root');
-if (rootElement?.hasChildNodes()) {
-  hydrate(<App />, rootElement);
-} else {
-  render(<App />, rootElement);
-}
+// Clear the existing HTML content
+document.body.innerHTML = '<div id="app"></div>';
+
+// Render your React component instead
+const root = createRoot(document.getElementById('app')!);
+root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

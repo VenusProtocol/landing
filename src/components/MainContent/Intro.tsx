@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '../Container/Container';
-import { ReactComponent as IconArrow } from './assets/arrow.svg';
+import IconArrow from './assets/arrow.svg?react';
 import LinkLaunchApp from '../Link/LinkLaunchApp';
 import Link from '../Link/Link';
 import s from './Intro.module.css';
