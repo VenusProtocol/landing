@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ScrollLock from 'react-scrolllock';
 import cn from 'classnames';
-import { ReactComponent as Logo } from './assets/logo.svg';
+import Logo from './assets/logo.svg?react';
 import NavigationLinks from '../NavigationLinks/NavigationLinks';
 import MenuMobile from './MenuMobile';
 import LinkLaunchApp from '../Link/LinkLaunchApp';

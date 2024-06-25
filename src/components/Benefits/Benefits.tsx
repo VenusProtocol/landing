@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
-import { ReactComponent as Octahedron } from './assets/1.svg';
-import { ReactComponent as Shield } from './assets/2.svg';
-import { ReactComponent as Dots } from './assets/3.svg';
+import Octahedron from './assets/1.svg?react';
+import Shield from './assets/2.svg?react';
+import Dots from './assets/3.svg?react';
 import Container from '../Container/Container';
 import s from './Benefits.module.css';
 

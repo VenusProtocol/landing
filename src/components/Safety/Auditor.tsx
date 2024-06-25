@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import s from './Safety.module.css';
-import { ReactComponent as Arrow } from './assets/arrow.svg';
+import Arrow from './assets/arrow.svg?react';
 
 interface ISafetyProps {
   className?: string;

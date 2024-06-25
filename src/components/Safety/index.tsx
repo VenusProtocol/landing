@@ -1,20 +1,20 @@
 import React from 'react';
 import cn from 'classnames';
 import Container from '../Container/Container';
-import { ReactComponent as PessimisticLogo } from './assets/pessimisticLogo.svg';
-import { ReactComponent as PessimisticLogoGray } from './assets/pessimisticLogoGray.svg';
-import { ReactComponent as CantinaLogo } from './assets/cantinaLogo.svg';
-import { ReactComponent as CantinaLogoGray } from './assets/cantinaLogoGray.svg';
-import { ReactComponent as PeckShieldLogo } from './assets/peckShieldLogo.svg';
-import { ReactComponent as PeckShieldLogoGray } from './assets/peckShieldLogoGray.svg';
-import { ReactComponent as CertikLogo } from './assets/certikLogo.svg';
-import { ReactComponent as CertikLogoGray } from './assets/certikLogoGray.svg';
-import { ReactComponent as OpenZeppelinLogo } from './assets/openZeppelinLogo.svg';
-import { ReactComponent as OpenZeppelinLogoGray } from './assets/openZeppelinLogoGray.svg';
-import { ReactComponent as QuantstampLogo } from './assets/quantstampLogo.svg';
-import { ReactComponent as QuantstampLogoGray } from './assets/quantstampLogoGray.svg';
-import { ReactComponent as Code4renaLogo } from './assets/code4renaLogo.svg';
-import { ReactComponent as Code4renaLogoGray } from './assets/code4renaLogoGray.svg';
+import PessimisticLogo from './assets/pessimisticLogo.svg?react';
+import PessimisticLogoGray from './assets/pessimisticLogoGray.svg?react';
+import CantinaLogo from './assets/cantinaLogo.svg?react';
+import CantinaLogoGray from './assets/cantinaLogoGray.svg?react';
+import PeckShieldLogo from './assets/peckShieldLogo.svg?react';
+import PeckShieldLogoGray from './assets/peckShieldLogoGray.svg?react';
+import CertikLogo from './assets/certikLogo.svg?react';
+import CertikLogoGray from './assets/certikLogoGray.svg?react';
+import OpenZeppelinLogo from './assets/openZeppelinLogo.svg?react';
+import OpenZeppelinLogoGray from './assets/openZeppelinLogoGray.svg?react';
+import QuantstampLogo from './assets/quantstampLogo.svg?react';
+import QuantstampLogoGray from './assets/quantstampLogoGray.svg?react';
+import Code4renaLogo from './assets/code4renaLogo.svg?react';
+import Code4renaLogoGray from './assets/code4renaLogoGray.svg?react';
 import s from './Safety.module.css';
 import SafetyScore from './SafetyScore';
 import Auditor from './Auditor';
@@ -80,7 +80,7 @@ const Safety: React.FC<ISafetyProps> = ({ className }) => (
         <SafetyScore className={s.safetyScoreMobile} />
         <div className={s.logos}>
           {auditors.map(a => (
-            <Auditor auditor={a} />
+            <Auditor key={`${a.href}-${a.audits}`} auditor={a} />
           ))}
           <OtherAuditors />
         </div>

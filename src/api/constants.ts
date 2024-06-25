@@ -1,5 +1,5 @@
 export const getTokenPublicUrl = (filePath: string) =>
-  `${process.env.PUBLIC_URL}/coins/${filePath}`;
+  `/coins/${filePath}`;
 
 export const tokenIconUrls = {
   UNI: getTokenPublicUrl('uni.svg'),
